@@ -886,7 +886,7 @@
     .section-title { font-size: clamp(32px, 9vw, 56px); }
 
     .programs-grid { grid-template-columns: 1fr; gap: 24px; }
-    .program-card-img { height: 260px; }
+    .program-card-img { height: 420px; background-size: contain !important; background-position: center center !important; }
 
     .pricing-grid { grid-template-columns: 1fr; gap: 20px; }
 
@@ -1137,7 +1137,7 @@
   <div class="section-title">READY TO<br><span class="blue">LEVEL UP?</span></div>
   <p class="section-sub">Tell me where you are and where you want to go. I will be in touch.</p>
 
-  <form class="form-wrap" name="contact" method="POST" data-netlify="true">
+  <form class="form-wrap" action="https://formspree.io/f/xaqrgbgv" method="POST">
     <div class="form-row">
       <div class="form-group">
         <label>FULL NAME</label>
@@ -1156,8 +1156,6 @@
       <label>TRAINING GOALS</label>
       <textarea name="message" placeholder="Tell us your sport, current training level, and what you want to achieve..."></textarea>
     </div>
-    <input type="hidden" name="_replyto" value="connor@wiseperformancecoach.com">
-    <input type="hidden" name="_subject" value="New Inquiry - Wise Performance">
     <button type="submit" class="btn-submit">SEND INQUIRY &#9993;</button>
   </form>
 
@@ -1189,8 +1187,6 @@
     <div class="footer-col">
       <h4>SUPPORT</h4>
       <ul>
-        <li><a href="#">Our Philosophy</a></li>
-        <li><a href="#">Athlete Results</a></li>
         <li><a href="mailto:connor@wiseperformancecoach.com">&#9993; Contact Us</a></li>
       </ul>
     </div>
