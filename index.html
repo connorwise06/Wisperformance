@@ -38,7 +38,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 16px 48px;
+      padding: 4px 48px;
       background: rgba(9,13,24,0.92);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid rgba(255,255,255,0.05);
@@ -125,10 +125,10 @@
       gap: 12px;
       font-family: 'Barlow Condensed', sans-serif;
       font-weight: 700;
-      font-size: 14px;
-      letter-spacing: 3px;
+      font-size: 19px;
+      letter-spacing: 4px;
       color: var(--blue-bright);
-      margin-bottom: 18px;
+      margin-bottom: 32px;
     }
 
     .hero-eyebrow::before {
@@ -141,11 +141,11 @@
     .hero h1 {
       font-family: 'Barlow Condensed', sans-serif;
       font-weight: 900;
-      font-size: clamp(100px, 14vw, 170px);
+      font-size: clamp(110px, 16vw, 190px);
       line-height: 0.88;
       letter-spacing: -2px;
       text-transform: uppercase;
-      margin-bottom: 24px;
+      margin-bottom: 140px;
     }
 
     .hero h1 .blue { color: var(--blue-bright); }
@@ -156,15 +156,15 @@
       margin-bottom: 40px;
     }
 
-    .hero-btns { display: flex; gap: 16px; }
+    .hero-btns { display: flex; gap: 20px; }
 
     .btn-primary {
       background: var(--blue);
       color: white;
-      padding: 16px 34px;
+      padding: 22px 48px;
       font-family: 'Barlow Condensed', sans-serif;
       font-weight: 700;
-      font-size: 15px;
+      font-size: 19px;
       letter-spacing: 2px;
       text-decoration: none;
       display: inline-flex;
@@ -178,10 +178,10 @@
     .btn-outline {
       background: transparent;
       color: white;
-      padding: 16px 34px;
+      padding: 22px 48px;
       font-family: 'Barlow Condensed', sans-serif;
       font-weight: 700;
-      font-size: 15px;
+      font-size: 19px;
       letter-spacing: 2px;
       text-decoration: none;
       border: 2px solid rgba(255,255,255,0.35);
@@ -915,7 +915,7 @@
 
 <!-- NAV -->
 <nav>
-  <a href="#"><img src="wp-logo.png" alt="Wise Performance" style="height:68px;"></a>
+  <a href="#"><img src="wp-logo.png" alt="Wise Performance" style="height:82px;"></a>
   <ul class="nav-links">
     <li><a href="#programs">PROGRAMS</a></li>
     <li><a href="#online-training">ONLINE TRAINING</a></li>
@@ -928,8 +928,7 @@
 <section id="hero">
   <div class="hero-eyebrow">ELITE ONLINE PERFORMANCE TRAINING</div>
   <h1>WISE<br><span class="blue">PERFORMANCE.</span></h1>
-  <p class="hero-sub">Unlock Your Full Potential.</p>
-  <div class="hero-btns">
+  <div class="hero-btns" style="margin-top:140px;">
     <a href="#programs" class="btn-primary">VIEW PROGRAMS &rarr;</a>
     <a href="#online-training" class="btn-outline">1-ON-1 COACHING</a>
   </div>
@@ -962,12 +961,12 @@
         </div>
         <h3>WISE PERFORMANCE<br>TRAINING TEAM</h3>
         <div class="via-th">VIA TRAIN HEROIC</div>
-        <p>Join the WP Training Team on Train Heroic. Structured programming delivered directly to your app — daily workouts, athlete tracking, and coach feedback all in one place.</p>
+        <p>Structured team programming delivered straight to your app. Train alongside other WP athletes with daily workouts, built-in coach feedback, and progressive overload that actually gets you results.</p>
         <ul class="feature-list">
           <li>App-based daily programming</li>
           <li>Performance tracking &amp; analytics</li>
           <li>Coach communication built in</li>
-          <li>Progressive overload periodization</li>
+          <li>Built-in progression week after week</li>
         </ul>
         <a href="https://marketplace.trainheroic.com/workout-plan/team/the-athlete-blueprint?attrib=597965-web" target="_blank" class="btn-card outline">JOIN WP TRAINING TEAM &#8599;</a>
       </div>
@@ -988,11 +987,11 @@
         </div>
         <h3>ADULT PERFORMANCE<br>TRAINING TEAM</h3>
         <div class="via-th">VIA TRAIN HEROIC</div>
-        <p>Built for working adults who refuse to let a busy schedule kill their performance. Structured programming that fits your life — without sacrificing results.</p>
+        <p>Built for working adults who refuse to let a busy schedule kill their performance. Structured programming designed around your life — not the other way around.</p>
         <ul class="feature-list">
           <li>App-based daily programming</li>
-          <li>Coach communication built in</li>
-          <li>Progressive overload periodization</li>
+          <li>Designed for the busy athlete</li>
+          <li>Built-in progression week after week</li>
         </ul>
         <a href="#" class="btn-card fill">JOIN AP TRAINING TEAM &#8599;</a>
       </div>
@@ -1012,11 +1011,11 @@
         </div>
         <h3>THE JUMP CODE</h3>
         <div class="via-th">VIA TRAIN HEROIC</div>
-        <p>The complete off-season vertical jump system — built for basketball players looking to come back to the court higher and more explosive. Plyometric progressions, reactive strength work, and mobility prep to unlock your highest leap.</p>
+        <p>The complete off-season vertical jump system — built for basketball players who want to come back to the court higher and more explosive. Plyometrics, strength progressions, and speed work all in one program.</p>
         <ul class="feature-list">
           <li>Full plyometric training protocol</li>
           <li>Strength training progressions</li>
-          <li>Mobility &amp; tendon prep included</li>
+          <li>Increase your vertical</li>
           <li>Immediate digital access</li>
         </ul>
         <a href="#" class="btn-card blue-outline">GET THE JUMP CODE &#8599;</a>
@@ -1038,10 +1037,11 @@
       <div class="plan-name">ESSENTIAL</div>
       <div class="plan-price"><sup>$</sup>99<span class="mo">/month</span></div>
       <div class="plan-tagline">Structured programming. Real results.</div>
-      <p class="plan-desc">Personalized programming built around your goals — no matter your background or experience level. Progressive plans designed around your schedule with direct access to your coach.</p>
+      <p class="plan-desc">Personalized 1-on-1 programming built around your goals — no matter your background or experience level. Progressive plans delivered through Train Heroic, designed around your schedule.</p>
       <ul class="check-list">
         <li>Custom monthly training plan</li>
-        <li>Direct messaging with coach</li>
+        <li>1-on-1 coaching via Train Heroic</li>
+        <li>Direct access to message me</li>
         <li>Access to WP exercise library</li>
       </ul>
       <a href="https://calendly.com/connor-wise06/30min" target="_blank" class="btn-full outline">GET STARTED</a>
@@ -1052,12 +1052,13 @@
       <div class="plan-name">ELITE</div>
       <div class="plan-price"><sup>$</sup>149<span class="mo">/month</span></div>
       <div class="plan-tagline">Full Access Elite Coaching.</div>
-      <p class="plan-desc">Weekly programming adjustments, unlimited coach access, and priority support. For anyone who wants every advantage and nothing less.</p>
+      <p class="plan-desc">The highest level of 1-on-1 coaching. Weekly programming adjustments, unlimited form reviews, and priority access to me — built for anyone who wants every edge and won't settle for less.</p>
       <ul class="check-list">
-        <li>Weekly programming + adjustments</li>
+        <li>Weekly programming adjustments</li>
         <li>Unlimited video form reviews</li>
-        <li>Priority direct messaging</li>
+        <li>Priority direct messaging with me</li>
         <li>Performance testing &amp; tracking</li>
+        <li>Access to WP exercise library</li>
       </ul>
       <a href="https://calendly.com/connor-wise06/30min" target="_blank" class="btn-full fill">GO ELITE</a>
     </div>
@@ -1084,7 +1085,7 @@
 
   <div class="products-grid">
     <div class="product-card">
-      <div class="product-img" style="background:url('ams.jpg') /* ← AMS PRODUCT PHOTO */ center/cover no-repeat;font-size:0;"></div>
+      <div class="product-img" style="background:url('ams.jpg') center/cover no-repeat;font-size:0;height:310px;background-position:center top;"></div>
       <div class="product-body">
         <div class="product-tag">PERFORMANCE TRACKING</div>
         <h3>ATHLETE MONITORING SYSTEM</h3>
