@@ -1,0 +1,1180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WISEPERFORMANCE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;0,900;1,800;1,900&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --blue: #1A6FD4;
+      --blue-bright: #2E8DFF;
+      --dark: #090D18;
+      --dark2: #0C1020;
+      --card-bg: #0F1628;
+      --card-border: #1A2540;
+      --white: #FFFFFF;
+      --gray: #7A8CA0;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Barlow', sans-serif;
+      background: var(--dark);
+      color: var(--white);
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; width: 100%;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 48px;
+      background: rgba(9,13,24,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .nav-logo {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-style: italic;
+      font-weight: 900;
+      font-size: 32px;
+      color: var(--white);
+      text-decoration: none;
+      letter-spacing: -1px;
+    }
+
+    .nav-links { display: flex; gap: 36px; list-style: none; }
+
+    .nav-links a {
+      color: var(--white);
+      text-decoration: none;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 600;
+      font-size: 15px;
+      letter-spacing: 1.5px;
+      opacity: 0.85;
+      transition: opacity 0.2s, color 0.2s;
+    }
+
+    .nav-links a:hover { opacity: 1; color: var(--blue-bright); }
+
+    .btn-nav {
+      background: var(--blue);
+      color: white;
+      border: none;
+      padding: 11px 24px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 1.5px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .btn-nav:hover { background: var(--blue-bright); }
+
+    /* ── SECTION LABEL ── */
+    .section-label {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      margin-bottom: 22px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 3.5px;
+      color: var(--blue-bright);
+    }
+
+    .section-label::before,
+    .section-label::after {
+      content: '';
+      width: 42px;
+      height: 2px;
+      background: var(--blue-bright);
+    }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 100vh;
+      background:
+        linear-gradient(to right, rgba(9,13,24,0.88) 45%, rgba(9,13,24,0.55) 100%),
+        url('hero-bg.jpg') /* ← HERO BACKGROUND — change filename here */ center top/cover no-repeat;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 120px 60px 80px;
+    }
+
+    .hero-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 3px;
+      color: var(--blue-bright);
+      margin-bottom: 18px;
+    }
+
+    .hero-eyebrow::before {
+      content: '';
+      width: 32px;
+      height: 2px;
+      background: var(--blue-bright);
+    }
+
+    .hero h1 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: clamp(100px, 14vw, 170px);
+      line-height: 0.88;
+      letter-spacing: -2px;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 .blue { color: var(--blue-bright); }
+
+    .hero-sub {
+      font-size: 18px;
+      color: rgba(255,255,255,0.75);
+      margin-bottom: 40px;
+    }
+
+    .hero-btns { display: flex; gap: 16px; }
+
+    .btn-primary {
+      background: var(--blue);
+      color: white;
+      padding: 16px 34px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 15px;
+      letter-spacing: 2px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: background 0.2s;
+    }
+
+    .btn-primary:hover { background: var(--blue-bright); }
+
+    .btn-outline {
+      background: transparent;
+      color: white;
+      padding: 16px 34px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 15px;
+      letter-spacing: 2px;
+      text-decoration: none;
+      border: 2px solid rgba(255,255,255,0.35);
+      transition: border-color 0.2s;
+    }
+
+    .btn-outline:hover { border-color: white; }
+
+    /* ── SHARED SECTION STYLES ── */
+    section { padding: 100px 60px; }
+
+    .section-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: clamp(52px, 6vw, 80px);
+      letter-spacing: -1px;
+      text-transform: uppercase;
+      text-align: center;
+      line-height: 0.95;
+      margin-bottom: 18px;
+    }
+
+    .section-title .blue { color: var(--blue-bright); }
+
+    .section-sub {
+      text-align: center;
+      color: rgba(255,255,255,0.65);
+      font-size: 17px;
+      max-width: 580px;
+      margin: 0 auto 64px;
+      line-height: 1.65;
+    }
+
+    /* ── PROGRAMS ── */
+    .programs-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .program-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .program-card-img {
+      height: 380px;
+      background: #1a2a3a;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card-badges {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      display: flex;
+      gap: 6px;
+    }
+
+    .badge {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 10px;
+      letter-spacing: 1.5px;
+      padding: 4px 9px;
+    }
+
+    .badge-featured { background: var(--blue); color: white; }
+    .badge-soon { background: rgba(0,0,0,0.7); color: white; border: 1px solid rgba(255,255,255,0.2); }
+
+    .program-card-body {
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .th-badge {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      margin-bottom: 12px;
+    }
+
+    .th-icon {
+      height: 28px;
+      width: auto;
+      background: transparent;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-style: italic;
+      font-weight: 900;
+      font-size: 15px;
+      color: #000;
+    }
+
+    .th-type {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: var(--blue-bright);
+    }
+
+    .program-card h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: 22px;
+      text-transform: uppercase;
+      line-height: 1.1;
+      margin-bottom: 4px;
+    }
+
+    .via-th {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: var(--gray);
+      margin-bottom: 16px;
+    }
+
+    .program-card p {
+      font-size: 14px;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.65;
+      margin-bottom: 20px;
+    }
+
+    .feature-list { list-style: none; margin-bottom: 28px; flex: 1; }
+
+    .feature-list li {
+      font-size: 13px;
+      color: rgba(255,255,255,0.8);
+      padding: 5px 0;
+      display: flex;
+      align-items: flex-start;
+      gap: 9px;
+    }
+
+    .feature-list li::before {
+      content: '■';
+      color: var(--blue-bright);
+      font-size: 7px;
+      margin-top: 5px;
+      flex-shrink: 0;
+    }
+
+    .btn-card {
+      display: block;
+      text-align: center;
+      padding: 14px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 2px;
+      text-decoration: none;
+      transition: all 0.2s;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-card.outline { color: white; border: 1px solid rgba(255,255,255,0.3); background: transparent; }
+    .btn-card.outline:hover { border-color: white; }
+    .btn-card.fill { background: var(--blue); color: white; }
+    .btn-card.fill:hover { background: var(--blue-bright); }
+    .btn-card.blue-outline { color: white; border: 1px solid var(--blue); background: transparent; }
+    .btn-card.blue-outline:hover { background: var(--blue); }
+
+    /* ── ONLINE COACHING ── */
+    #online-training { background: var(--dark2); }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .pricing-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      padding: 36px;
+      position: relative;
+    }
+
+    .pricing-card.featured { border-color: var(--blue); }
+
+    .most-popular {
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--blue);
+      color: white;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 11px;
+      letter-spacing: 2.5px;
+      padding: 4px 18px;
+      white-space: nowrap;
+    }
+
+    .plan-name {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 12px;
+      letter-spacing: 3px;
+      color: var(--blue-bright);
+      margin-bottom: 10px;
+    }
+
+    .plan-price {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: 68px;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .plan-price sup { font-size: 28px; vertical-align: super; }
+    .plan-price .mo { font-size: 18px; font-weight: 500; color: rgba(255,255,255,0.5); }
+
+    .plan-tagline {
+      font-style: italic;
+      color: var(--blue-bright);
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .plan-desc {
+      font-size: 14px;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.65;
+      margin-bottom: 24px;
+    }
+
+    .check-list { list-style: none; margin-bottom: 32px; }
+
+    .check-list li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      padding: 6px 0;
+    }
+
+    .check-list li::before {
+      content: '✓';
+      color: var(--blue-bright);
+      font-weight: 700;
+      font-size: 15px;
+      flex-shrink: 0;
+    }
+
+    .btn-full {
+      display: block;
+      width: 100%;
+      text-align: center;
+      padding: 15px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 2px;
+      text-decoration: none;
+      transition: all 0.2s;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-full.outline { color: white; border: 1px solid rgba(255,255,255,0.3); background: transparent; }
+    .btn-full.outline:hover { border-color: white; }
+    .btn-full.fill { background: var(--blue); color: white; }
+    .btn-full.fill:hover { background: var(--blue-bright); }
+
+    /* Consult Banner */
+    .consult-banner {
+      max-width: 860px;
+      margin: 48px auto 0;
+      border: 1px solid var(--blue);
+      padding: 26px 36px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .consult-left {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .consult-icon {
+      width: 44px;
+      height: 44px;
+      background: rgba(26,111,212,0.15);
+      border: 1px solid var(--blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+
+    .consult-banner h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: 18px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 6px;
+    }
+
+    .consult-banner p {
+      font-size: 13px;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.55;
+      max-width: 480px;
+    }
+
+    /* ── PRODUCTS ── */
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .product-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      overflow: hidden;
+    }
+
+    .product-img {
+      height: 175px;
+      background: #111928;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 48px;
+      border-bottom: 1px solid var(--card-border);
+    }
+
+    .product-body { padding: 20px; }
+
+    .product-tag {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: var(--blue-bright);
+      margin-bottom: 6px;
+    }
+
+    .product-card h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: 17px;
+      text-transform: uppercase;
+      line-height: 1.2;
+    }
+
+    /* ── CONTACT ── */
+    #contact { background: var(--dark2); }
+
+    .form-wrap {
+      max-width: 680px;
+      margin: 0 auto;
+      background: rgba(255,255,255,0.025);
+      border: 1px solid var(--card-border);
+      padding: 48px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .form-group { margin-bottom: 16px; }
+
+    .form-group label {
+      display: block;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 12px;
+      letter-spacing: 2px;
+      margin-bottom: 8px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--card-border);
+      color: white;
+      padding: 14px 16px;
+      font-size: 14px;
+      font-family: 'Barlow', sans-serif;
+      transition: border-color 0.2s;
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder { color: rgba(255,255,255,0.25); }
+
+    .form-group input:focus,
+    .form-group textarea:focus { outline: none; border-color: var(--blue); }
+
+    .form-group textarea { height: 120px; resize: none; }
+
+    .btn-submit {
+      width: 100%;
+      padding: 18px;
+      background: var(--blue);
+      color: white;
+      border: none;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 16px;
+      letter-spacing: 2px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: background 0.2s;
+    }
+
+    .btn-submit:hover { background: var(--blue-bright); }
+
+    .contact-email-wrap {
+      text-align: center;
+      margin-top: 28px;
+    }
+
+    .contact-email-wrap a {
+      color: var(--blue-bright);
+      text-decoration: none;
+      font-size: 15px;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #060810;
+      padding: 60px;
+      border-top: 1px solid var(--card-border);
+    }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 44px;
+    }
+
+    .footer-logo {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-style: italic;
+      font-weight: 900;
+      font-size: 40px;
+      color: var(--blue-bright);
+      margin-bottom: 6px;
+    }
+
+    .footer-brand {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 2.5px;
+      margin-bottom: 22px;
+    }
+
+    .social-links { display: flex; gap: 10px; }
+
+    .social-link {
+      width: 38px;
+      height: 38px;
+      border: 1px solid var(--card-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .social-link:hover { border-color: var(--blue); color: var(--blue-bright); }
+
+    .footer-col h4 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 2.5px;
+      color: var(--blue-bright);
+      margin-bottom: 20px;
+    }
+
+    .footer-col ul { list-style: none; }
+
+    .footer-col ul li { margin-bottom: 10px; }
+
+    .footer-col ul li a {
+      color: rgba(255,255,255,0.55);
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.2s;
+    }
+
+    .footer-col ul li a:hover { color: white; }
+
+    .footer-bottom {
+      border-top: 1px solid var(--card-border);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-bottom p { font-size: 13px; color: var(--gray); }
+
+    .footer-legal { display: flex; gap: 20px; }
+
+    .footer-legal a {
+      font-size: 13px;
+      color: var(--gray);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-legal a:hover { color: white; }
+
+    /* ── FREE PROGRAM STRIP ── */
+    .free-strip {
+      background: var(--blue);
+      padding: 28px 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .free-strip-text { display: flex; flex-direction: column; gap: 4px; }
+    .free-strip-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 11px; font-weight: 700; letter-spacing: 2.5px;
+      color: rgba(255,255,255,0.7); text-transform: uppercase;
+    }
+    .free-strip-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 26px; font-weight: 800; letter-spacing: 1px;
+      color: white; text-transform: uppercase;
+    }
+    .free-strip-title span { color: #A8D8FF; }
+    .btn-strip {
+      background: white; color: var(--blue);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800; font-size: 14px; letter-spacing: 2px;
+      padding: 14px 28px; text-decoration: none;
+      white-space: nowrap; flex-shrink: 0;
+      transition: background 0.2s;
+    }
+    .btn-strip:hover { background: #e8f4ff; }
+
+    /* ── FREE PROGRAM SECTION ── */
+    .free-section {
+      background: linear-gradient(135deg, #0a1628 0%, #0f2044 100%);
+      border-top: 1px solid rgba(46,141,255,0.2);
+      border-bottom: 1px solid rgba(46,141,255,0.2);
+      padding: 80px 60px;
+      display: flex;
+      align-items: center;
+      gap: 80px;
+    }
+    .free-section-left { flex: 1; }
+    .free-section-right { flex-shrink: 0; text-align: center; }
+    .free-badge {
+      display: inline-block;
+      background: rgba(46,141,255,0.15);
+      border: 1px solid var(--blue);
+      color: var(--blue-bright);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 11px; font-weight: 700; letter-spacing: 2.5px;
+      padding: 5px 14px; margin-bottom: 16px;
+    }
+    .free-section h2 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 48px; font-weight: 900; line-height: 1;
+      color: white; text-transform: uppercase; margin-bottom: 16px;
+    }
+    .free-section h2 span { color: var(--blue-bright); }
+    .free-section p { color: rgba(255,255,255,0.65); font-size: 15px; line-height: 1.6; margin-bottom: 24px; }
+    .free-perks { list-style: none; margin-bottom: 32px; display: flex; flex-direction: column; gap: 10px; }
+    .free-perks li {
+      color: rgba(255,255,255,0.8); font-size: 14px;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .free-perks li::before {
+      content: ''; width: 6px; height: 6px;
+      background: var(--blue-bright); flex-shrink: 0;
+    }
+    .free-pdf-mock {
+      width: 180px; height: 240px;
+      background: linear-gradient(160deg, #1A6FD4 0%, #0f3a6e 100%);
+      border: 1px solid rgba(255,255,255,0.15);
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 10px;
+      box-shadow: 20px 20px 60px rgba(0,0,0,0.5);
+    }
+    .free-pdf-mock .pdf-wp {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 36px; font-weight: 900; color: white; letter-spacing: 2px;
+    }
+    .free-pdf-mock .pdf-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 10px; font-weight: 700; color: rgba(255,255,255,0.6);
+      letter-spacing: 2px; text-align: center; padding: 0 16px;
+    }
+    .free-pdf-mock .pdf-weeks {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 13px; font-weight: 700; color: var(--blue-bright);
+      letter-spacing: 1.5px;
+    }
+    .btn-free {
+      display: inline-block;
+      background: var(--blue); color: white;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800; font-size: 15px; letter-spacing: 2px;
+      padding: 16px 36px; text-decoration: none;
+      transition: background 0.2s;
+    }
+    .btn-free:hover { background: var(--blue-bright); }
+    .free-fine {
+      margin-top: 12px; font-size: 12px;
+      color: rgba(255,255,255,0.35); letter-spacing: 0.5px;
+    }
+
+    /* ── PHOTO POSITION TOOL ── */
+    #adj-toggle {
+      position: fixed; bottom: 20px; right: 20px; z-index: 9999;
+      background: var(--blue); color: white; border: none;
+      padding: 10px 18px; font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700; font-size: 13px; letter-spacing: 1.5px;
+      cursor: pointer; box-shadow: 0 4px 16px rgba(0,0,0,0.5);
+    }
+    #adj-toggle:hover { background: var(--blue-bright); }
+    #adj-panel {
+      display: none; position: fixed; bottom: 62px; right: 20px;
+      z-index: 9999; background: rgba(9,13,24,0.97);
+      border: 1px solid rgba(255,255,255,0.12);
+      padding: 16px 20px; width: 260px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.7);
+      font-family: 'Barlow Condensed', sans-serif;
+    }
+    #adj-panel.open { display: block; }
+    #adj-panel h4 {
+      color: var(--blue-bright); font-size: 11px; letter-spacing: 2px;
+      margin: 0 0 14px; text-transform: uppercase;
+    }
+    .adj-row {
+      display: flex; align-items: center; gap: 6px; margin-bottom: 10px;
+    }
+    .adj-label {
+      color: #ccc; font-size: 11px; letter-spacing: 1px; font-weight: 700;
+      width: 80px; flex-shrink: 0; text-transform: uppercase;
+    }
+    .adj-row button {
+      background: rgba(255,255,255,0.08); color: white; border: 1px solid rgba(255,255,255,0.15);
+      width: 30px; height: 30px; cursor: pointer; font-size: 11px; line-height:1;
+    }
+    .adj-row button:hover { background: var(--blue); border-color: var(--blue); }
+
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#"><img src="wp-logo.png" alt="Wise Performance" style="height:68px;"></a>
+  <ul class="nav-links">
+    <li><a href="#programs">PROGRAMS</a></li>
+    <li><a href="#online-training">ONLINE TRAINING</a></li>
+    <li><a href="#products">PRODUCTS</a></li>
+  </ul>
+  <a href="#contact" class="btn-nav">START TRAINING</a>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-eyebrow">ELITE ONLINE PERFORMANCE TRAINING</div>
+  <h1>WISE<br><span class="blue">PERFORMANCE.</span></h1>
+  <p class="hero-sub">Unlock Your Full Potential.</p>
+  <div class="hero-btns">
+    <a href="#programs" class="btn-primary">VIEW PROGRAMS &rarr;</a>
+    <a href="#online-training" class="btn-outline">1-ON-1 COACHING</a>
+  </div>
+</section>
+
+<!-- FREE PROGRAM STRIP -->
+<div class="free-strip">
+  <div class="free-strip-text">
+    <div class="free-strip-label">Free Download</div>
+    <div class="free-strip-title">GET A FREE <span>4-WEEK PERFORMANCE PROGRAM</span></div>
+  </div>
+  <a href="https://connor-wise.kit.com/wiseperformance" target="_blank" class="btn-strip">CLAIM FREE PROGRAM &rarr;</a>
+</div>
+
+<!-- PROGRAMS -->
+<section id="programs">
+  <div class="section-label">YOUR PROGRAMS</div>
+  <div class="section-title">TRAIN WITH WP</div>
+  <p class="section-sub">Join a training team on Train Heroic or grab The Jump Code and get to work.</p>
+
+  <div class="programs-grid">
+
+    <!-- WP Training Team -->
+    <div class="program-card">
+      <div class="program-card-img" style="background:linear-gradient(rgba(9,13,24,0.25),rgba(9,13,24,0.45)),url('card-wp.jpg') top center/cover no-repeat"></div>
+      <div class="program-card-body">
+        <div class="th-badge">
+          <img src="th-logo.webp" alt="Train Heroic" class="th-icon">
+          <span class="th-type">TRAINING TEAM</span>
+        </div>
+        <h3>WISE PERFORMANCE<br>TRAINING TEAM</h3>
+        <div class="via-th">VIA TRAIN HEROIC</div>
+        <p>Join the WP Training Team on Train Heroic. Structured programming delivered directly to your app — daily workouts, athlete tracking, and coach feedback all in one place.</p>
+        <ul class="feature-list">
+          <li>App-based daily programming</li>
+          <li>Performance tracking &amp; analytics</li>
+          <li>Coach communication built in</li>
+          <li>Progressive overload periodization</li>
+        </ul>
+        <a href="https://marketplace.trainheroic.com/workout-plan/team/the-athlete-blueprint?attrib=597965-web" target="_blank" class="btn-card outline">JOIN WP TRAINING TEAM &#8599;</a>
+      </div>
+    </div>
+
+    <!-- AP Training Team -->
+    <div class="program-card">
+      <div class="program-card-img" style="background:linear-gradient(rgba(9,13,24,0.25),rgba(9,13,24,0.45)),url('card-jump.jpg') center center/cover no-repeat">
+        <div class="card-badges">
+          <span class="badge badge-featured">FEATURED</span>
+          <span class="badge badge-soon">COMING SOON</span>
+        </div>
+      </div>
+      <div class="program-card-body">
+        <div class="th-badge">
+          <img src="th-logo.webp" alt="Train Heroic" class="th-icon">
+          <span class="th-type">TRAINING TEAM</span>
+        </div>
+        <h3>ADULT PERFORMANCE<br>TRAINING TEAM</h3>
+        <div class="via-th">VIA TRAIN HEROIC</div>
+        <p>Built for working adults who refuse to let a busy schedule kill their performance. Structured programming that fits your life — without sacrificing results.</p>
+        <ul class="feature-list">
+          <li>App-based daily programming</li>
+          <li>Coach communication built in</li>
+          <li>Progressive overload periodization</li>
+        </ul>
+        <a href="#" class="btn-card fill">JOIN AP TRAINING TEAM &#8599;</a>
+      </div>
+    </div>
+
+    <!-- Jump Code -->
+    <div class="program-card">
+      <div class="program-card-img" style="background:linear-gradient(rgba(9,13,24,0.25),rgba(9,13,24,0.45)),url('card-ap.jpg') top center/cover no-repeat">
+        <div class="card-badges">
+          <span class="badge badge-soon">COMING SOON</span>
+        </div>
+      </div>
+      <div class="program-card-body">
+        <div class="th-badge">
+          <img src="th-logo.webp" alt="Train Heroic" class="th-icon">
+          <span class="th-type">PROGRAM</span>
+        </div>
+        <h3>THE JUMP CODE</h3>
+        <div class="via-th">VIA TRAIN HEROIC</div>
+        <p>The complete off-season vertical jump system — built for basketball players looking to come back to the court higher and more explosive. Plyometric progressions, reactive strength work, and mobility prep to unlock your highest leap.</p>
+        <ul class="feature-list">
+          <li>Full plyometric training protocol</li>
+          <li>Strength training progressions</li>
+          <li>Mobility &amp; tendon prep included</li>
+          <li>Immediate digital access</li>
+        </ul>
+        <a href="#" class="btn-card blue-outline">GET THE JUMP CODE &#8599;</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ONLINE TRAINING -->
+<section id="online-training">
+  <div class="section-label">ONLINE COACHING</div>
+  <div class="section-title">TRAIN ANYWHERE.<br><span class="blue">WIN EVERYWHERE.</span></div>
+  <p class="section-sub">Remote 1-on-1 coaching built around your schedule, your sport, and your goals. Choose your level.</p>
+
+  <div class="pricing-grid">
+
+    <div class="pricing-card">
+      <div class="plan-name">ESSENTIAL</div>
+      <div class="plan-price"><sup>$</sup>99<span class="mo">/month</span></div>
+      <div class="plan-tagline">Structured programming. Real results.</div>
+      <p class="plan-desc">Personalized programming built around your goals — no matter your background or experience level. Progressive plans designed around your schedule with direct access to your coach.</p>
+      <ul class="check-list">
+        <li>Custom monthly training plan</li>
+        <li>Direct messaging with coach</li>
+        <li>Access to WP exercise library</li>
+      </ul>
+      <a href="https://calendly.com/connor-wise06/30min" target="_blank" class="btn-full outline">GET STARTED</a>
+    </div>
+
+    <div class="pricing-card featured">
+      <div class="most-popular">MOST POPULAR</div>
+      <div class="plan-name">ELITE</div>
+      <div class="plan-price"><sup>$</sup>149<span class="mo">/month</span></div>
+      <div class="plan-tagline">Full Access Elite Coaching.</div>
+      <p class="plan-desc">Weekly programming adjustments, unlimited coach access, and priority support. For anyone who wants every advantage and nothing less.</p>
+      <ul class="check-list">
+        <li>Weekly programming + adjustments</li>
+        <li>Unlimited video form reviews</li>
+        <li>Priority direct messaging</li>
+        <li>Performance testing &amp; tracking</li>
+      </ul>
+      <a href="https://calendly.com/connor-wise06/30min" target="_blank" class="btn-full fill">GO ELITE</a>
+    </div>
+
+  </div>
+
+  <div class="consult-banner">
+    <div class="consult-left">
+      <div class="consult-icon">&#128203;</div>
+      <div>
+        <h3>NOT SURE WHICH PLAN IS RIGHT FOR YOU?</h3>
+        <p>Book a free 15-minute consult call. We'll talk through your goals, current training, and find the best fit — no pressure, no pitch.</p>
+      </div>
+    </div>
+    <a href="https://calendly.com/connor-wise06/30min" target="_blank" class="btn-primary">BOOK FREE CONSULT</a>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section id="products">
+  <div class="section-label">DIGITAL PRODUCTS</div>
+  <div class="section-title">KNOWLEDGE.<br><span class="blue">INSTANTLY YOURS.</span></div>
+  <p class="section-sub">Downloadable programs, guides, and systems built from real coaching experience. Buy once, train forever.</p>
+
+  <div class="products-grid">
+    <div class="product-card">
+      <div class="product-img" style="background:url('ams.jpg') /* ← AMS PRODUCT PHOTO */ center/cover no-repeat;font-size:0;"></div>
+      <div class="product-body">
+        <div class="product-tag">PERFORMANCE TRACKING</div>
+        <h3>ATHLETE MONITORING SYSTEM</h3>
+        <a href="https://wiseperformance-shop.fourthwall.com/products/athlete-monitoring-system-ultimate" target="_blank" class="btn-card fill" style="margin-top:14px;">BUY NOW &#8599;</a>
+      </div>
+    </div>
+    <div class="product-card">
+      <div class="product-img" style="background:#0f1e35;"></div>
+      <div class="product-body">
+        <div class="product-tag">PROGRAM</div>
+        <h3>COMING SOON</h3>
+      </div>
+    </div>
+    <div class="product-card">
+      <div class="product-img" style="background:#0f1e35;"></div>
+      <div class="product-body">
+        <div class="product-tag">PROGRAM</div>
+        <h3>COMING SOON</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FREE PROGRAM SECTION -->
+<div class="free-section">
+  <div class="free-section-left">
+    <div class="free-badge">FREE DOWNLOAD</div>
+    <h2>4-WEEK <span>PERFORMANCE</span><br>PROGRAM</h2>
+    <p>Power, strength, speed and conditioning — all four in one block. Built from real coaching experience, no fluff.</p>
+    <ul class="free-perks">
+      <li>Olympic lifts, sprint work, and hypertrophy</li>
+      <li>4-week progressive overload — no guesswork</li>
+      <li>Instant PDF download, completely free</li>
+    </ul>
+    <a href="https://connor-wise.kit.com/wiseperformance" target="_blank" class="btn-free">GET FREE PROGRAM &rarr;</a>
+    <div class="free-fine">No credit card. Just your email.</div>
+  </div>
+  <div class="free-section-right">
+    <div class="free-pdf-mock">
+      <div class="pdf-wp">WP</div>
+      <div class="pdf-label">WISE PERFORMANCE</div>
+      <div class="pdf-weeks">4-WEEK PROGRAM</div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-label">GET STARTED</div>
+  <div class="section-title">READY TO<br><span class="blue">LEVEL UP?</span></div>
+  <p class="section-sub">Tell me where you are and where you want to go. I will be in touch.</p>
+
+  <form class="form-wrap" name="contact" method="POST" data-netlify="true">
+    <div class="form-row">
+      <div class="form-group">
+        <label>FULL NAME</label>
+        <input type="text" name="name" placeholder="Your name" required>
+      </div>
+      <div class="form-group">
+        <label>EMAIL ADDRESS</label>
+        <input type="email" name="email" placeholder="your@email.com" required>
+      </div>
+    </div>
+    <div class="form-group">
+      <label>PHONE NUMBER</label>
+      <input type="tel" name="phone" placeholder="(000) 000-0000">
+    </div>
+    <div class="form-group">
+      <label>TRAINING GOALS</label>
+      <textarea name="message" placeholder="Tell us your sport, current training level, and what you want to achieve..."></textarea>
+    </div>
+    <input type="hidden" name="_replyto" value="connor@wiseperformancecoach.com">
+    <input type="hidden" name="_subject" value="New Inquiry - Wise Performance">
+    <button type="submit" class="btn-submit">SEND INQUIRY &#9993;</button>
+  </form>
+
+  <div class="contact-email-wrap">
+    <a href="mailto:connor@wiseperformancecoach.com">&#9993; connor@wiseperformancecoach.com</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <img src="wp-logo.png" alt="Wise Performance" style="height:60px;margin-bottom:8px;display:block;">
+      <div class="footer-brand">WISE PERFORMANCE</div>
+      <div class="social-links">
+        <a href="https://www.instagram.com/wise_performance" class="social-link" target="_blank"><img src="insta-logo.jpg" alt="Instagram" style="height:28px;width:28px;object-fit:cover;border-radius:6px;"></a>
+        <a href="#" class="social-link" target="_blank"><svg height="28" viewBox="0 0 90 63" xmlns="http://www.w3.org/2000/svg"><rect width="90" height="63" rx="14" fill="#FF0000"/><polygon points="36,14 36,49 63,31.5" fill="white"/></svg></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>PROGRAMS</h4>
+      <ul>
+        <li><a href="#">WP Training Team</a></li>
+        <li><a href="#">AP Training Team</a></li>
+        <li><a href="#">The Jump Code</a></li>
+        <li><a href="#online-training">1-on-1 Coaching</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>SUPPORT</h4>
+      <ul>
+        <li><a href="#">Our Philosophy</a></li>
+        <li><a href="#">Athlete Results</a></li>
+        <li><a href="mailto:connor@wiseperformancecoach.com">&#9993; Contact Us</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 WISEPERFORMANCE. All rights reserved.</p>
+    <div class="footer-legal">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+    </div>
+  </div>
+</footer>
+
+
+<script>
+  function getEl(id) {
+    if (id === 'hero')      return document.getElementById('hero');
+    if (id === 'card-wp')   return document.querySelectorAll('.program-card-img')[0];
+    if (id === 'card-ap')   return document.querySelectorAll('.program-card-img')[1];
+    if (id === 'card-jump') return document.querySelectorAll('.program-card-img')[2];
+    if (id === 'ams')       return document.querySelector('.product-img');
+  }
+  window.addEventListener('DOMContentLoaded', function() {
+    ['hero','card-wp','card-ap','card-jump','ams'].forEach(function(id) {
+      var v = localStorage.getItem('wp_pos_' + id);
+      if (v) { var p = JSON.parse(v); var el = getEl(id); if (el) el.style.backgroundPosition = p.x+'% '+p.y+'%'; }
+    });
+  });
+</script>
+</body>
+</html>
