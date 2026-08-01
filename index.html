@@ -865,6 +865,46 @@
     }
     .adj-row button:hover { background: var(--blue); border-color: var(--blue); }
 
+  /* ── MOBILE ── */
+  @media (max-width: 768px) {
+    nav {
+      padding: 14px 20px;
+      gap: 16px;
+    }
+    nav img { height: 44px !important; }
+    .nav-links { gap: 16px; }
+    .nav-links a { font-size: 12px; }
+    .btn-nav { display: none; }
+
+    .hero { padding: 80px 24px 60px; min-height: 70vh; }
+    .hero h1 { font-size: clamp(64px, 18vw, 100px); }
+    .hero-sub { font-size: 15px; }
+    .hero-btns { flex-direction: column; gap: 12px; }
+    .hero-btns a { width: 100%; text-align: center; }
+
+    section { padding: 60px 20px; }
+    .section-title { font-size: clamp(32px, 9vw, 56px); }
+
+    .programs-grid { grid-template-columns: 1fr; gap: 24px; }
+    .program-card-img { height: 260px; }
+
+    .pricing-grid { grid-template-columns: 1fr; gap: 20px; }
+
+    .products-grid { grid-template-columns: 1fr; gap: 20px; }
+
+    .free-section { flex-direction: column; gap: 40px; padding: 60px 24px; }
+    .free-section-right { display: none; }
+
+    .free-strip { flex-direction: column; gap: 16px; padding: 24px 20px; text-align: center; }
+    .btn-strip { width: 100%; text-align: center; }
+
+    .form-row { grid-template-columns: 1fr; }
+
+    .footer-cols { flex-direction: column; gap: 32px; }
+    .footer-col { min-width: unset; }
+
+    .contact-wrap { padding: 60px 20px; }
+  }
   </style>
 </head>
 <body>
