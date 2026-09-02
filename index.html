@@ -167,6 +167,14 @@
 
     .hero-btns { display: flex; gap: 20px; }
 
+    .hero-features { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin-top: 60px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 40px; }
+    .hero-feature { padding: 0 40px; border-right: 1px solid rgba(255,255,255,0.08); text-align: center; display: flex; flex-direction: column; align-items: center; }
+    .hero-feature:last-child { border-right: none; }
+    .hero-feature:first-child { padding-left: 0; }
+    .hf-icon { color: var(--blue-bright); margin-bottom: 14px; }
+    .hf-title { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 18px; color: white; margin-bottom: 8px; letter-spacing: 0.5px; }
+    .hf-desc { font-size: 14px; color: var(--gray); line-height: 1.6; }
+
     .btn-primary {
       background: var(--blue);
       color: white;
@@ -409,7 +417,7 @@
     .plan-name {
       font-family: 'Barlow Condensed', sans-serif;
       font-weight: 700;
-      font-size: 12px;
+      font-size: 16px;
       letter-spacing: 3px;
       color: var(--blue-bright);
       margin-bottom: 10px;
@@ -477,6 +485,16 @@
     .btn-full.outline:hover { border-color: white; }
     .btn-full.fill { background: var(--blue); color: white; }
     .btn-full.fill:hover { background: var(--blue-bright); }
+
+    /* How It Works */
+    .how-it-works { max-width: 860px; margin: 48px auto 0; }
+    .hiw-title { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 16px; letter-spacing: 3px; color: var(--blue-bright); margin-bottom: 16px; text-transform: uppercase; }
+    .hiw-steps { display: flex; flex-direction: column; gap: 0; border-radius: 12px; overflow: hidden; }
+    .hiw-step { display: flex; align-items: flex-start; gap: 20px; padding: 28px 32px; background: var(--card-bg); border-bottom: 1px solid rgba(255,255,255,0.07); }
+    .hiw-step:last-child { border-bottom: none; }
+    .hiw-num { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 18px; color: var(--blue-bright); min-width: 32px; padding-top: 2px; }
+    .hiw-step-title { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 22px; color: white; margin-bottom: 6px; letter-spacing: 0.5px; }
+    .hiw-body p { color: var(--gray); font-size: 15px; margin: 0; line-height: 1.6; }
 
     /* Consult Banner */
     .consult-banner {
@@ -897,6 +915,9 @@
     .hero-sub { font-size: 15px; }
     .hero-btns { flex-direction: column; gap: 12px; }
     .hero-btns a { width: 100%; text-align: center; }
+    .hero-features { grid-template-columns: 1fr 1fr; gap: 24px; }
+    .hero-feature { padding: 0 !important; border-right: none !important; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 20px !important; }
+    .hero-feature:nth-last-child(-n+2) { border-bottom: none; }
 
     section { padding: 60px 20px; }
     .section-title { font-size: clamp(32px, 9vw, 56px); }
@@ -947,6 +968,37 @@
   <div class="hero-btns" style="margin-top:140px;">
     <a href="#programs" class="btn-primary">VIEW PROGRAMS &rarr;</a>
     <a href="#online-training" class="btn-outline">1-ON-1 COACHING</a>
+  </div>
+
+  <div class="hero-features">
+    <div class="hero-feature">
+      <div class="hf-icon">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+      </div>
+      <div class="hf-title">Video Form Reviews</div>
+      <div class="hf-desc">Film it, send it, get real feedback on exactly what to fix — not generic cues.</div>
+    </div>
+    <div class="hero-feature">
+      <div class="hf-icon">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+      </div>
+      <div class="hf-title">Custom Programming</div>
+      <div class="hf-desc">Written for your goals, your schedule, your sport. Adjusted when needed.</div>
+    </div>
+    <div class="hero-feature">
+      <div class="hf-icon">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      </div>
+      <div class="hf-title">Direct Access to Me</div>
+      <div class="hf-desc">You message me — not an assistant, not a bot. Real answers when they matter.</div>
+    </div>
+    <div class="hero-feature">
+      <div class="hf-icon">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+      </div>
+      <div class="hf-title">App-Based Training</div>
+      <div class="hf-desc">Your workouts delivered daily through Relay. Log sets, track progress, stay accountable.</div>
+    </div>
   </div>
 </section>
 
@@ -1044,7 +1096,7 @@
 <!-- ONLINE TRAINING -->
 <section id="online-training">
   <div class="section-label">ONLINE COACHING</div>
-  <div class="section-title">TRAIN ANYWHERE.<br><span class="blue">WIN EVERYWHERE.</span></div>
+  <div class="section-title">TRAIN ANYWHERE.<br><span class="blue">COACHING TIERS.</span></div>
   <p class="section-sub">Remote 1-on-1 coaching built around your schedule, your sport, and your goals. Choose your level.</p>
 
   <div class="pricing-grid">
@@ -1094,6 +1146,40 @@
       </div>
     </div>
     <a href="https://calendly.com/connor-wise06/30min" target="_blank" class="btn-primary">BOOK FREE CONSULT</a>
+  </div>
+
+  <div class="how-it-works">
+    <div class="hiw-title">HOW IT WORKS</div>
+    <div class="hiw-steps">
+      <div class="hiw-step">
+        <div class="hiw-num">01</div>
+        <div class="hiw-body">
+          <div class="hiw-step-title">Book a consult</div>
+          <p>Quick call to talk through your goals, schedule, and current training level.</p>
+        </div>
+      </div>
+      <div class="hiw-step">
+        <div class="hiw-num">02</div>
+        <div class="hiw-body">
+          <div class="hiw-step-title">Get your program</div>
+          <p>Custom programming built around you, delivered through Relay within 48 hours.</p>
+        </div>
+      </div>
+      <div class="hiw-step">
+        <div class="hiw-num">03</div>
+        <div class="hiw-body">
+          <div class="hiw-step-title">Start training</div>
+          <p>Your first block lands in the app. Log your workouts, track your progress.</p>
+        </div>
+      </div>
+      <div class="hiw-step">
+        <div class="hiw-num">04</div>
+        <div class="hiw-body">
+          <div class="hiw-step-title">Get results</div>
+          <p>Weekly adjustments, form reviews, and direct access to me every step of the way.</p>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
