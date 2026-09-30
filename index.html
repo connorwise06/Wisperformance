@@ -552,6 +552,45 @@
       max-width: 480px;
     }
 
+    /* ── ABOUT ── */
+    .about-wrap {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 56px;
+      align-items: center;
+    }
+
+    .about-text p {
+      font-size: 17px;
+      color: rgba(255,255,255,0.75);
+      line-height: 1.7;
+      margin-bottom: 18px;
+    }
+
+    .about-text p strong { color: var(--white); font-weight: 600; }
+
+    .about-stats { display: flex; flex-direction: column; gap: 16px; }
+
+    .about-stat {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-left: 3px solid var(--blue-bright);
+      padding: 22px 26px;
+    }
+
+    .about-stat-num {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: 40px;
+      line-height: 1;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .about-stat-label { font-size: 14px; color: var(--gray); }
+
     /* ── PRODUCTS ── */
     .products-grid {
       display: grid;
@@ -935,6 +974,9 @@
 
     .pricing-grid { grid-template-columns: 1fr; gap: 20px; }
 
+    .about-wrap { grid-template-columns: 1fr; gap: 32px; }
+    .about-text p { font-size: 16px; }
+
     .products-grid { grid-template-columns: 1fr; gap: 20px; }
 
     .free-section { flex-direction: column; gap: 40px; padding: 60px 24px; }
@@ -1098,6 +1140,35 @@
       </div>
     </div>
 
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-label">MEET YOUR COACH</div>
+  <div class="section-title">CONNOR<br><span class="blue">WISE.</span></div>
+  <p class="section-sub">The coach behind every program.</p>
+
+  <div class="about-wrap">
+    <div class="about-text">
+      <p>I'm a <strong>collegiate strength and conditioning coach</strong> and the former <strong>Associate Head Strength &amp; Conditioning Coach at a D1 Training facility</strong>.</p>
+      <p>I've coached hundreds of athletes, from youth to college level, across football, basketball, softball, and soccer. I've seen what actually carries over to the field, what keeps athletes healthy, and how to keep them progressing season after season.</p>
+      <p>Every program I write comes from that experience. When you train with Wise Performance, you get the same coaching my in-person athletes get, built around your sport, your schedule, and your goals.</p>
+    </div>
+    <div class="about-stats">
+      <div class="about-stat">
+        <div class="about-stat-num">100s</div>
+        <div class="about-stat-label">Athletes coached</div>
+      </div>
+      <div class="about-stat">
+        <div class="about-stat-num">Youth &rarr; College</div>
+        <div class="about-stat-label">Every level of athlete</div>
+      </div>
+      <div class="about-stat">
+        <div class="about-stat-num">Multi-Sport</div>
+        <div class="about-stat-label">Experience across field and court sports</div>
+      </div>
+    </div>
   </div>
 </section>
 
