@@ -1041,7 +1041,7 @@
   }
     /* ── FIGTREE STYLE ── */
     #hero h1, .section-title, .about-name, .free-section h2 { text-transform: none; font-weight: 900; letter-spacing: -0.03em; }
-    #hero h1 { font-size: clamp(56px, 7vw, 100px); line-height: 1; }
+    #hero h1 { font-size: clamp(56px, 7vw, 100px); line-height: 0.95; text-transform: uppercase; font-style: italic; letter-spacing: -0.02em; padding-right: 0.1em; }
     .section-title { font-size: clamp(38px, 4.5vw, 60px); line-height: 1.05; }
     .about-name { font-size: clamp(52px, 6vw, 84px); line-height: 1; }
     .free-section h2 { font-size: 44px; line-height: 1.05; }
@@ -1054,7 +1054,7 @@
     .btn-nav, .btn-primary, .btn-outline, .btn-card, .btn-full, .btn-submit, .btn-strip, .btn-free { border-radius: 6px; letter-spacing: 1.5px; }
     .btn-primary, .btn-outline { font-size: 16px; }
     @media (max-width: 768px) {
-      #hero h1 { font-size: clamp(44px, 13vw, 60px); }
+      #hero h1 { font-size: clamp(32px, 11vw, 56px); }
       .section-title { font-size: clamp(32px, 9vw, 42px); }
       .about-name { font-size: 48px; }
       .free-section h2 { font-size: 34px; }
@@ -1070,3 +1070,11 @@
     .products-page .product-card { width: 360px; max-width: 100%; }
     .product-body p { font-size: 14px; color: rgba(255,255,255,0.65); line-height: 1.6; margin-top: 10px; }
     @media (max-width: 768px) { .products-page { padding-top: 130px; } .products-page .products-grid { grid-template-columns: 1fr; } }
+
+    @media (max-width: 360px) {
+      nav { padding: 12px 14px; gap: 10px; }
+      nav img { height: 36px !important; }
+      .nav-links { gap: 8px; }
+      .nav-links a { font-size: 10px; letter-spacing: 0; }
+      .hero-btns a { padding: 18px 20px; white-space: nowrap; }
+    }
