@@ -54,3 +54,32 @@
   }, { rootMargin: '0px 0px -8% 0px', threshold: 0.12 });
   els.forEach(function (el) { io.observe(el); });
 })();
+
+// Contact form: send to Formspree in the background and show a thank-you
+// message instead of leaving the site. Falls back to a normal submit if
+// fetch is not available.
+(function () {
+  var form = document.getElementById('contact-form');
+  var thanks = document.getElementById('form-thanks');
+  if (!form || !thanks || !window.fetch || !window.FormData) return;
+  var btn = form.querySelector('.btn-submit');
+  var err = form.querySelector('.form-error');
+  var label = btn ? btn.innerHTML : '';
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (err) err.hidden = true;
+    if (btn) { btn.disabled = true; btn.textContent = 'SENDING…'; }
+    fetch(form.action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } })
+      .then(function (res) {
+        if (!res.ok) throw new Error('status ' + res.status);
+        form.hidden = true;
+        thanks.hidden = false;
+        thanks.focus();
+        if (window.gtag) window.gtag('event', 'generate_lead', { form: 'contact', plan: form.plan ? form.plan.value : '' });
+      })
+      .catch(function () {
+        if (err) err.hidden = false;
+        if (btn) { btn.disabled = false; btn.innerHTML = label; }
+      });
+  });
+})();

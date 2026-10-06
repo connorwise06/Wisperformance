@@ -24,8 +24,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-  <script src="site.js" defer></script></head>
+  <link rel="stylesheet" href="styles.css?v=4">
+  <script src="site.js?v=4" defer></script></head>
 <body>
 
 <!-- NAV -->
@@ -178,7 +178,11 @@
     <h2 class="about-name">Connor <span class="blue">Wise.</span></h2>
     <div class="about-role">COLLEGIATE STRENGTH &amp; CONDITIONING COACH</div>
 
-    <div class="about-wrap">
+    <div class="about-wrap about-wrap--photo">
+      <div class="about-photo">
+        <img src="coach.jpg" alt="Connor Wise testing his vertical jump on a Vertec" loading="lazy">
+      </div>
+      <div class="about-main">
       <div class="about-text">
         <p>Former <strong>Associate Head Strength &amp; Conditioning Coach at a D1 Training facility</strong>.</p>
         <p>I've coached hundreds of athletes, from youth to college level, across football, basketball, softball, and soccer. I've seen what actually carries over to the field, what keeps athletes healthy, and how to keep them progressing season after season.</p>
@@ -201,6 +205,7 @@
             <div class="about-stat-label">Field and court</div>
           </div>
         </div>
+      </div>
       </div>
     </div>
   </div>
@@ -254,7 +259,7 @@
     <div class="consult-left">
       <div>
         <h3>NOT SURE WHICH PLAN IS RIGHT FOR YOU?</h3>
-        <p>Book a free 15-minute consult call. We'll talk through your goals, current training, and find the best fit — no pressure, no pitch.</p>
+        <p>Book a free 30-minute consult call. We'll talk through your goals, current training, and find the best fit — no pressure, no pitch.</p>
       </div>
     </div>
     <a href="https://calendly.com/connor-wise06/30min" target="_blank" class="btn-primary">BOOK FREE CONSULT</a>
@@ -358,27 +363,49 @@
   <div class="section-title">Ready to<br><span class="blue">level up?</span></div>
   <p class="section-sub">Tell me where you are and where you want to go. I will be in touch.</p>
 
-  <form class="form-wrap" action="https://formspree.io/f/xaqrgbgv" method="POST">
+  <form class="form-wrap" id="contact-form" action="https://formspree.io/f/xaqrgbgv" method="POST">
+    <input type="hidden" name="_subject" value="New Wise Performance inquiry">
+    <!-- spam trap: real visitors never see or fill this -->
+    <input type="text" name="_gotcha" class="form-trap" tabindex="-1" autocomplete="off" aria-hidden="true">
     <div class="form-row">
       <div class="form-group">
-        <label>FULL NAME</label>
-        <input type="text" name="name" placeholder="Your name" required>
+        <label for="cf-name">FULL NAME</label>
+        <input type="text" id="cf-name" name="name" placeholder="Your name" autocomplete="name" required>
       </div>
       <div class="form-group">
-        <label>EMAIL ADDRESS</label>
-        <input type="email" name="email" placeholder="your@email.com" required>
+        <label for="cf-email">EMAIL ADDRESS</label>
+        <input type="email" id="cf-email" name="email" placeholder="your@email.com" autocomplete="email" required>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="cf-phone">PHONE NUMBER</label>
+        <input type="tel" id="cf-phone" name="phone" placeholder="(000) 000-0000" autocomplete="tel">
+      </div>
+      <div class="form-group">
+        <label for="cf-plan">INTERESTED IN</label>
+        <select id="cf-plan" name="plan">
+          <option value="Not sure yet">Not sure yet</option>
+          <option value="Essential ($99/month)">Essential ($99/month)</option>
+          <option value="Elite ($149/month)">Elite ($149/month)</option>
+          <option value="Training team (TrainHeroic)">Training team (TrainHeroic)</option>
+          <option value="Something else">Something else</option>
+        </select>
       </div>
     </div>
     <div class="form-group">
-      <label>PHONE NUMBER</label>
-      <input type="tel" name="phone" placeholder="(000) 000-0000">
-    </div>
-    <div class="form-group">
-      <label>TRAINING GOALS</label>
-      <textarea name="message" placeholder="Tell me your sport, current training level, and what you want to achieve..."></textarea>
+      <label for="cf-message">TRAINING GOALS</label>
+      <textarea id="cf-message" name="message" placeholder="Tell me your sport, current training level, and what you want to achieve..."></textarea>
     </div>
     <button type="submit" class="btn-submit">SEND INQUIRY &#9993;</button>
+    <p class="form-error" role="alert" hidden>Something went wrong sending your message. Please try again, or email me at connor@wiseperformancecoach.com.</p>
   </form>
+  <div class="form-thanks" id="form-thanks" hidden tabindex="-1">
+    <div class="form-thanks-check">&#10003;</div>
+    <h3>Message sent.</h3>
+    <p>Thanks for reaching out. I'll get back to you soon. Want to skip the wait? Book a free consult call now.</p>
+    <a href="https://calendly.com/connor-wise06/30min" target="_blank" class="btn-primary">BOOK FREE CONSULT</a>
+  </div>
 
   <div class="contact-email-wrap">
     <a href="mailto:connor@wiseperformancecoach.com">&#9993; connor@wiseperformancecoach.com</a>
@@ -417,8 +444,8 @@
   <div class="footer-bottom">
     <p>&copy; 2026 WISEPERFORMANCE. All rights reserved.</p>
     <div class="footer-legal">
-      <a href="#">Privacy Policy</a>
-      <a href="#">Terms of Service</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Service</a>
     </div>
   </div>
 </footer>

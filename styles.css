@@ -1131,3 +1131,45 @@
     .products-page .product-body { display: flex; flex-direction: column; flex: 1; }
     .products-page .product-body h3, .products-page .product-body p { margin-bottom: 14px; }
     .products-page .product-body .btn-card { margin-top: auto !important; }    .btn-card { line-height: 20px; }
+
+    /* ── ABOUT PHOTO ── */
+    .about-wrap--photo { grid-template-columns: 0.85fr 1.15fr; align-items: stretch; }
+    .about-photo { position: relative; min-height: 520px; clip-path: polygon(0 0, calc(100% - 36px) 0, 100% 36px, 100% 100%, 0 100%); background: var(--card-bg); }
+    .about-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 15%; display: block; }
+    .about-photo::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 4px; background: var(--blue); }
+    .about-main { display: flex; flex-direction: column; gap: 36px; }
+    @media (max-width: 768px) {
+      .about-wrap--photo { grid-template-columns: 1fr; }
+      .about-photo { min-height: 0; aspect-ratio: 4 / 5; max-height: 480px; }
+    }
+
+    /* ── CONTACT FORM EXTRAS ── */
+    .form-group select {
+      width: 100%; background-color: rgba(255,255,255,0.05); border: 1px solid var(--card-border); color: white;
+      padding: 14px 44px 14px 16px; font-size: 14px; font-family: 'Figtree', sans-serif; appearance: none; -webkit-appearance: none; cursor: pointer;
+      background-image: linear-gradient(45deg, transparent 50%, var(--blue-bright) 50%), linear-gradient(135deg, var(--blue-bright) 50%, transparent 50%);
+      background-position: calc(100% - 22px) 52%, calc(100% - 16px) 52%; background-size: 6px 6px, 6px 6px; background-repeat: no-repeat;
+      transition: border-color 0.2s;
+    }
+    .form-group select:focus { outline: none; border-color: var(--blue); }
+    .form-group select option { background: var(--card-bg); color: white; }
+    .form-trap { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+    .btn-submit[disabled] { opacity: 0.7; cursor: wait; transform: none; }
+    .form-error { margin-top: 14px; color: #ff8a8a; font-size: 14px; text-align: center; }
+    .form-thanks { max-width: 680px; margin: 0 auto; text-align: center; background: rgba(255,255,255,0.025); border: 1px solid var(--blue); padding: 56px 40px; }
+    .form-thanks:focus { outline: none; }
+    .form-thanks-check { width: 64px; height: 64px; margin: 0 auto 20px; border-radius: 50%; background: var(--blue); display: flex; align-items: center; justify-content: center; font-size: 30px; font-weight: 900; }
+    .form-thanks h3 { font-size: 34px; font-weight: 900; letter-spacing: -0.02em; margin-bottom: 12px; }
+    .form-thanks p { color: rgba(255,255,255,0.72); font-size: 16px; line-height: 1.65; max-width: 460px; margin: 0 auto 28px; }
+
+    /* ── LEGAL PAGES ── */
+    .legal-page { padding-top: 170px; }
+    .legal-body { max-width: 760px; margin: 0 auto; }
+    .legal-body .legal-updated { color: var(--gray); font-size: 14px; letter-spacing: 1px; text-align: center; margin-bottom: 48px; }
+    .legal-body h2 { font-size: 22px; font-weight: 800; margin: 40px 0 12px; }
+    .legal-body p, .legal-body li { color: rgba(255,255,255,0.75); font-size: 16px; line-height: 1.75; }
+    .legal-body p { margin-bottom: 14px; }
+    .legal-body ul { margin: 0 0 14px 22px; }
+    .legal-body li { margin-bottom: 6px; }
+    .legal-body a { color: var(--blue-bright); }
+    @media (max-width: 768px) { .legal-page { padding-top: 130px; } }    @media (max-width: 768px) { .programs-grid .program-card:nth-child(3) .program-card-img { background-position: center 6% !important; } }
