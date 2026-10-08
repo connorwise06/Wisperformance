@@ -1237,3 +1237,6 @@
     .compare-more { text-align: center; margin-top: 28px; }
     .elite-hero-inner > * { min-width: 0; }
     @media (max-width: 400px) { .elite-title { font-size: clamp(36px, 12.5vw, 52px); } }
+    .programs-page { padding-top: 170px; }
+    @media (max-width: 768px) { .programs-page { padding-top: 130px; } }
+    @media (max-width: 768px) { .programs-grid .program-card:nth-child(2) .program-card-img { background-position: center 60% !important; } }
