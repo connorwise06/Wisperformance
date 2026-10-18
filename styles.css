@@ -3,12 +3,12 @@
     :root {
       --blue: #1A6FD4;
       --blue-bright: #2E8DFF;
-      --dark: #090D18;
-      --dark2: #0C1020;
-      --card-bg: #0F1628;
-      --card-border: #1A2540;
+      --dark: #0B0B0C;
+      --dark2: #111113;
+      --card-bg: #161618;
+      --card-border: #2A2A2E;
       --white: #FFFFFF;
-      --gray: #7A8CA0;
+      --gray: #8E8E95;
     }
 
     html { scroll-behavior: smooth; }
@@ -30,7 +30,7 @@
       align-items: center;
       justify-content: space-between;
       padding: 4px 48px;
-      background: rgba(9,13,24,0.92);
+      background: rgba(11,11,12,0.92);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid rgba(255,255,255,0.05);
     }
@@ -102,7 +102,7 @@
     #hero {
       min-height: 100vh;
       background:
-        linear-gradient(to right, rgba(9,13,24,0.97) 45%, rgba(9,13,24,0.80) 100%),
+        linear-gradient(to right, rgba(11,11,12,0.97) 45%, rgba(11,11,12,0.80) 100%),
         url('hero-bg.jpg') /* ← HERO BACKGROUND — change filename here */ center top/cover no-repeat;
       display: flex;
       flex-direction: column;
@@ -232,7 +232,7 @@
 
     .program-card-img {
       height: 380px;
-      background: #1a2a3a;
+      background: #1c1c1f;
       position: relative;
       overflow: hidden;
     }
@@ -644,7 +644,7 @@
 
     .product-img {
       height: 175px;
-      background: #111928;
+      background: #161618;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -756,7 +756,7 @@
 
     /* ── FOOTER ── */
     footer {
-      background: #060810;
+      background: #080809;
       padding: 60px;
       border-top: 1px solid var(--card-border);
     }
@@ -878,7 +878,7 @@
 
     /* ── FREE PROGRAM SECTION ── */
     .free-section {
-      background: linear-gradient(135deg, #0a1628 0%, #0f2044 100%);
+      background: linear-gradient(135deg, #121214 0%, #19191c 100%);
       border-top: 1px solid rgba(46,141,255,0.2);
       border-bottom: 1px solid rgba(46,141,255,0.2);
       padding: 80px 60px;
@@ -960,7 +960,7 @@
     #adj-toggle:hover { background: var(--blue-bright); }
     #adj-panel {
       display: none; position: fixed; bottom: 62px; right: 20px;
-      z-index: 9999; background: rgba(9,13,24,0.97);
+      z-index: 9999; background: rgba(11,11,12,0.97);
       border: 1px solid rgba(255,255,255,0.12);
       padding: 16px 20px; width: 260px;
       box-shadow: 0 8px 32px rgba(0,0,0,0.7);
@@ -1071,7 +1071,7 @@
     .product-body p { font-size: 14px; color: rgba(255,255,255,0.65); line-height: 1.6; margin-top: 10px; }
     @media (max-width: 768px) { .products-page { padding-top: 130px; } .products-page .products-grid { grid-template-columns: 1fr; } }
 
-    @media (max-width: 360px) {
+    @media (max-width: 390px) {
       nav { padding: 12px 14px; gap: 10px; }
       nav img { height: 36px !important; }
       .nav-links { gap: 8px; }
@@ -1090,7 +1090,7 @@
     .reveal.in { opacity: 1; transform: none; }
 
     nav { transition: background 0.3s, box-shadow 0.3s; }
-    nav.scrolled { background: rgba(9,13,24,0.97); box-shadow: 0 10px 30px rgba(0,0,0,0.35); }
+    nav.scrolled { background: rgba(11,11,12,0.97); box-shadow: 0 10px 30px rgba(0,0,0,0.35); }
     .scroll-progress { position: fixed; top: 0; left: 0; right: 0; height: 3px; background: var(--blue-bright); transform: scaleX(0); transform-origin: 0 50%; z-index: 101; pointer-events: none; }
 
     .program-card:not(.reveal), .pricing-card:not(.reveal), .product-card:not(.reveal) { transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease; }
@@ -1098,7 +1098,7 @@
     .program-card-img { transition: transform 0.6s ease; }
     .program-card:hover .program-card-img { transform: scale(1.05); }
     .hiw-step:not(.reveal) { transition: background 0.3s; }
-    .hiw-step:hover { background: #121b33; }
+    .hiw-step:hover { background: #1c1c1f; }
 
     .btn-nav, .btn-primary, .btn-outline, .btn-card, .btn-full, .btn-submit, .btn-strip, .btn-free { transition: background 0.2s, border-color 0.2s, transform 0.2s, box-shadow 0.2s; }
     .btn-nav:hover, .btn-primary:hover, .btn-card.fill:hover, .btn-full.fill:hover, .btn-submit:hover, .btn-free:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(26,111,212,0.35); }
@@ -1172,7 +1172,7 @@
     .legal-body ul { margin: 0 0 14px 22px; }
     .legal-body li { margin-bottom: 6px; }
     .legal-body a { color: var(--blue-bright); }
-    @media (max-width: 768px) { .legal-page { padding-top: 130px; } }    @media (max-width: 768px) { .programs-grid .program-card:nth-child(3) .program-card-img { background-position: center 6% !important; } }
+    @media (max-width: 768px) { .legal-page { padding-top: 130px; } }    @media (max-width: 768px) { .programs-grid .program-card:nth-child(3) .program-card-img { background-position: center 72% !important; } }
 
     /* ── ELITE PAGE ── */
     .elite-hero { padding-top: 150px; }
@@ -1195,7 +1195,7 @@
     .elite-num { font-weight: 900; font-style: italic; font-size: 34px; color: var(--blue-bright); margin-bottom: 14px; }
     .elite-feature h3 { font-size: 21px; font-weight: 800; margin-bottom: 10px; }
     .elite-feature p { font-size: 15px; line-height: 1.65; color: rgba(255,255,255,0.7); }
-    .elite-feature--cta { border-color: var(--blue); background: linear-gradient(160deg, #10244a, var(--card-bg)); }
+    .elite-feature--cta { border-color: var(--blue); background: linear-gradient(160deg, #1d1f24, var(--card-bg)); }
     .elite-feature--cta .btn-card { margin-top: auto; }
     .elite-feature--cta p { margin-bottom: 22px; }
 
