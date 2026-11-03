@@ -29,7 +29,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 4px 48px;
+      padding: 12px 48px;
       background: rgba(11,11,12,0.92);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid rgba(255,255,255,0.05);
@@ -987,7 +987,7 @@
   /* ── MOBILE ── */
   @media (max-width: 768px) {
     nav {
-      padding: 14px 20px;
+      padding: 18px 20px;
       gap: 16px;
     }
     nav img { height: 34px !important; }
@@ -1072,7 +1072,7 @@
     @media (max-width: 768px) { .products-page { padding-top: 130px; } .products-page .products-grid { grid-template-columns: 1fr; } }
 
     @media (max-width: 390px) {
-      nav { padding: 12px 14px; gap: 10px; }
+      nav { padding: 16px 14px; gap: 10px; }
       nav img { height: 30px !important; }
       .nav-links { gap: 8px; }
       .nav-links a { font-size: 10px; letter-spacing: 0; }
