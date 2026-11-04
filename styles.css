@@ -417,7 +417,7 @@
     .plan-price sup { font-size: 28px; vertical-align: super; }
     .plan-price .mo { font-size: 18px; font-weight: 500; font-style: normal; letter-spacing: 0; color: rgba(255,255,255,0.55); margin-left: 8px; }
     /* every big price uses the same Figtree Black Italic */
-    .plan-price, .elite-price strong { font-family: 'Figtree', sans-serif; font-weight: 900; font-style: italic; letter-spacing: -0.03em; line-height: 1; }
+    .plan-price, .elite-price strong { font-family: 'Figtree', sans-serif; font-weight: 300; font-style: normal; letter-spacing: -0.02em; line-height: 1; color: #fff; }
 
     .plan-tagline {
       font-style: italic;
@@ -1183,7 +1183,7 @@
     .elite-title .blue { color: var(--blue-bright); }
     .elite-lead { font-size: 18px; line-height: 1.65; color: rgba(255,255,255,0.75); max-width: 540px; }
     .elite-price { display: flex; align-items: baseline; gap: 8px; margin-top: 32px; }
-    .elite-price strong { font-size: 72px; font-weight: 900; font-style: italic; letter-spacing: -0.03em; line-height: 1; }
+    .elite-price strong { font-size: 72px; line-height: 1; }
     .elite-price span { font-size: 18px; font-weight: 500; font-style: normal; letter-spacing: 0; color: rgba(255,255,255,0.55); }
     .elite-price-note { color: var(--gray); font-size: 13px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin: 8px 0 30px; }
     .elite-ctas { display: flex; gap: 16px; flex-wrap: wrap; }
@@ -1252,12 +1252,42 @@
     .lab-app-row img { width: 100%; max-width: 420px; height: auto; justify-self: center; -webkit-mask-image: radial-gradient(ellipse 72% 72% at 50% 45%, #000 62%, transparent 100%); mask-image: radial-gradient(ellipse 72% 72% at 50% 45%, #000 62%, transparent 100%); }
     .lab-app-text h3 { font-size: 30px; font-weight: 900; line-height: 1.15; margin: 10px 0 14px; }
     .lab-app-text p { color: rgba(255,255,255,0.7); line-height: 1.7; }
+    .lab-hero { position: relative; overflow: hidden; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 120px 24px 80px; background: radial-gradient(ellipse 60% 45% at 50% 38%, rgba(46,141,255,0.16), transparent 70%), var(--dark); }
+    .lab-hero::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px); background-size: 56px 56px; -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000, transparent 75%); mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000, transparent 75%); pointer-events: none; }
+    .lab-hero > * { position: relative; animation: wpRise 0.8s cubic-bezier(.2,.7,.2,1) both; }
+    .lab-hero-logo { width: 100%; max-width: 280px; height: auto; margin-bottom: 24px; animation-delay: 0.05s; }
+    .lab-hero-title { font-weight: 300; font-style: normal; text-transform: uppercase; color: #fff; font-size: clamp(42px, 7vw, 92px); line-height: 1.02; letter-spacing: -0.01em; animation-delay: 0.15s; }
+    .lab-hero-title .blue { color: #fff; }
+    .lab-hero-sub { max-width: 560px; margin: 22px auto 0; color: rgba(255,255,255,0.72); font-size: 19px; line-height: 1.6; animation-delay: 0.25s; }
+    .lab-hero-stats { display: grid; grid-template-columns: repeat(4, auto); margin-top: 34px; border-top: 1px solid var(--card-border); border-bottom: 1px solid var(--card-border); animation-delay: 0.35s; }
+    .lab-hero-stats div { padding: 20px 30px; }
+    .lab-hero-stats div + div { border-left: 1px solid var(--card-border); }
+    .lab-hero-stats strong { display: block; font-size: 28px; font-weight: 300; color: #fff; }
+    .lab-hero-stats span { display: block; margin-top: 4px; color: var(--gray); font-size: 11px; font-weight: 800; letter-spacing: 2px; }
+    .lab-hero-buy { display: flex; align-items: center; justify-content: center; gap: 26px; margin-top: 32px; animation-delay: 0.45s; }
+    .lab-hero-buy .elite-price { margin: 0; }
+    .lab-hero-more { margin-top: 24px; color: var(--gray); font-size: 12px; font-weight: 800; letter-spacing: 2px; animation-delay: 0.55s; transition: color 0.3s; }
+    .lab-hero-more:hover { color: var(--blue-bright); }
+    @media (max-width: 768px) {
+      .lab-hero { min-height: 0; padding: 120px 20px 56px; }
+      .lab-hero-logo { max-width: 230px; margin-bottom: 24px; }
+      .lab-hero-sub { font-size: 16px; }
+      .lab-hero-stats { grid-template-columns: 1fr 1fr; width: 100%; max-width: 360px; }
+      .lab-hero-stats div { padding: 16px 10px; }
+      .lab-hero-stats div:nth-child(3) { border-left: none; }
+      .lab-hero-stats div:nth-child(n+3) { border-top: 1px solid var(--card-border); }
+      .lab-hero-stats strong { font-size: 21px; }
+      .lab-hero-buy { flex-direction: column; gap: 18px; width: 100%; max-width: 360px; }
+      .lab-hero-buy .btn-primary { width: 100%; text-align: center; }
+    }
     .lab-alt { background: var(--dark2); }
     .lab-get { padding-top: 80px; padding-bottom: 80px; }
     .lab-get-row { max-width: 1000px; margin: 20px auto 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
     .lab-get-item { display: flex; flex-direction: column; align-items: center; gap: 14px; text-align: center; padding: 28px 16px; border-radius: 16px; background: var(--card-bg); border: 1px solid var(--card-border); }
     .lab-get-item svg { width: 34px; height: 34px; fill: none; stroke: var(--blue-bright); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
     .lab-get-item strong { font-size: 17px; font-weight: 800; line-height: 1.25; }
+    .lab-prog h3 { padding-right: 96px; }
+    @media (max-width: 768px) { .lab-prog h3 { padding-right: 76px; } }
     .lab-app-text .section-label { justify-content: flex-start; margin-bottom: 14px; }
     .lab-steps { list-style: none; padding: 0; margin: 28px auto 22px; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; counter-reset: step; }
     .lab-steps li { counter-increment: step; display: flex; align-items: center; gap: 10px; padding: 10px 18px 10px 10px; border-radius: 40px; background: var(--card-bg); border: 1px solid var(--card-border); font-weight: 700; font-size: 15px; }
@@ -1331,6 +1361,8 @@
     .lab-prog:hover { transform: translateY(-6px); border-color: var(--blue); box-shadow: 0 18px 40px rgba(0,0,0,0.45), 0 0 0 1px rgba(46,141,255,0.25); }
     .lab-prog-logo { position: absolute; top: 24px; right: 24px; width: 80px; height: auto; pointer-events: none; }
     .lab-prog-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; position: relative; }
+    .lab-prog .lab-prog-tags { padding-right: 96px; }
+    @media (max-width: 768px) { .lab-prog .lab-prog-tags { padding-right: 76px; } }
     .lab-prog-tags span { padding: 6px 12px; border-radius: 30px; font-size: 11px; font-weight: 800; letter-spacing: 1.5px; color: var(--blue-bright); background: rgba(46,141,255,0.1); border: 1px solid rgba(46,141,255,0.35); }
     .lab-prog h3 { position: relative; font-size: 38px; font-weight: 900; font-style: italic; text-transform: uppercase; letter-spacing: -0.02em; line-height: 1; margin: 0 0 10px; }
     .lab-prog > p { position: relative; color: rgba(255,255,255,0.8); font-size: 18px; line-height: 1.4; }
@@ -1347,3 +1379,6 @@
       .lab-prog { min-height: 210px; padding: 28px 24px; }
       .lab-prog h3 { font-size: 30px; } .lab-prog-logo { width: 64px; top: 20px; right: 20px; }    }
     .elite-hero-media img.team-hero-photo { aspect-ratio: 4 / 5; object-fit: cover; object-position: center 30%; }
+
+    /* every heading uses the thin Figtree look from the Performance Lab hero */
+    h1, h2, h3, .section-title, .hiw-title, .plan-name { font-weight: 300 !important; font-style: normal !important; letter-spacing: -0.01em !important; }
