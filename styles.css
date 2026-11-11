@@ -1137,7 +1137,7 @@
     /* ── ABOUT PHOTO ── */
     .about-wrap--photo { grid-template-columns: 0.85fr 1.15fr; align-items: stretch; }
     .about-photo { position: relative; min-height: 520px; clip-path: polygon(0 0, calc(100% - 36px) 0, 100% 36px, 100% 100%, 0 100%); background: var(--card-bg); }
-    .about-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 15%; display: block; }
+    .about-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 35% 70%; display: block; }
     .about-photo::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 4px; background: var(--blue); }
     .about-main { display: flex; flex-direction: column; gap: 36px; }
     @media (max-width: 768px) {
@@ -1438,5 +1438,75 @@
       .proof-stat small { font-size: 11px; }
     }
     @media (max-width: 560px) { .ways-grid { grid-template-columns: 1fr; } .way h3 { font-size: 24px; margin: 16px 0 12px; } .way-best { margin-bottom: 20px; } }
+    /* ── TRAINING TEAM PAGE ── */
+    .team-hero { position: relative; overflow: hidden; padding: 140px 60px 90px; background: radial-gradient(ellipse 55% 60% at 78% 45%, rgba(46,141,255,0.16), transparent 70%), var(--dark); }
+    .team-hero-inner { max-width: 1180px; margin: 0 auto; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 64px; align-items: center; }
+    .team-hero-inner > * { min-width: 0; }
+    .team-hero-text > * { animation: wpRise 0.8s cubic-bezier(.2,.7,.2,1) both; }
+    .team-hero-title { text-transform: uppercase; color: #fff; font-size: clamp(44px, 6.6vw, 92px); line-height: 1.02; margin: 18px 0 0; animation-delay: 0.1s; }
+    .team-hero-sub { max-width: 520px; margin-top: 22px; color: rgba(255,255,255,0.72); font-size: 18px; line-height: 1.6; animation-delay: 0.2s; }
+    .team-hero-stats { grid-template-columns: repeat(3, auto); justify-content: start; animation-delay: 0.3s; }
+    .team-hero-stats div:first-child { padding-left: 0; }
+    .team-hero-buy { justify-content: flex-start; animation-delay: 0.4s; }
+    .team-hero-buy .btn-primary { white-space: nowrap; }
+    .team-hero-photo-wrap { position: relative; max-width: 440px; justify-self: center; animation: wpRise 0.9s 0.25s cubic-bezier(.2,.7,.2,1) both; }
+    .team-hero-photo-wrap img { position: relative; display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 20px; box-shadow: 0 30px 80px rgba(0,0,0,0.55); }
+    .team-train .section-title { margin-bottom: 44px; }
+    .pillars { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .pillar { position: relative; overflow: hidden; border-radius: 18px; border: 1px solid var(--card-border); aspect-ratio: 4 / 5; }
+    .pillar img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.7s ease; }
+    .pillar:hover img { transform: scale(1.06); }
+    .pillar::before { content: ''; position: absolute; inset: 35% 0 0 0; z-index: 1; background: linear-gradient(transparent, rgba(11,11,12,0.92)); }
+    .pillar::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; z-index: 2; height: 3px; background: linear-gradient(90deg, var(--blue), var(--blue-bright)); transform: scaleX(0); transform-origin: 0 50%; transition: transform 0.4s ease; }
+    .pillar:hover::after { transform: scaleX(1); }
+    .pillar-body { position: absolute; left: 22px; right: 22px; bottom: 20px; z-index: 2; }
+    .pillar-body span { color: var(--blue-bright); font-size: 12px; font-weight: 800; letter-spacing: 2px; }
+    .pillar-body h3 { text-transform: uppercase; font-size: 34px; line-height: 1; margin: 6px 0 8px; }
+    .pillar-body p { color: rgba(255,255,255,0.8); font-size: 15px; line-height: 1.45; }
+    .team-train .lab-get-row { max-width: 1100px; margin-top: 16px; }
+    .pillar img.pillar-img--vertec { object-position: center 12%; }
+    @media (max-width: 900px) {
+      .team-hero { padding: 120px 20px 60px; }
+      .team-hero-inner { grid-template-columns: 1fr; gap: 44px; }
+      .team-hero-photo-wrap { max-width: 340px; }
+      .team-hero-sub { font-size: 16px; }
+      .team-hero-stats { grid-template-columns: repeat(3, 1fr); width: 100%; max-width: none; }
+      .team-hero-stats div { padding: 16px 8px; }
+      .team-hero-stats div:nth-child(3) { border-left: 1px solid var(--card-border); }
+      .team-hero-stats div:nth-child(n+3) { border-top: none; }
+      .team-hero-stats strong { font-size: 20px; }
+      .team-hero-stats span { font-size: 9px; letter-spacing: 1px; }
+      .team-hero-buy { align-items: flex-start; max-width: none; }
+      .team-train .section-title { margin-bottom: 30px; }
+      .pillars { grid-template-columns: 1fr; max-width: 420px; }
+      .pillar { aspect-ratio: 5 / 4; }
+      .pillar img { object-position: center 30%; }
+    }
+    /* ── HOME: MEET YOUR COACH ── */
+    .coach { background: radial-gradient(ellipse 50% 60% at 22% 50%, rgba(46,141,255,0.13), transparent 70%), var(--dark); border-top: 1px solid var(--card-border); }
+    .coach-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 72px; align-items: center; }
+    .coach-inner > * { min-width: 0; }
+    .coach-photo { position: relative; max-width: 420px; justify-self: center; width: 100%; }
+    .coach-photo img { position: relative; display: block; width: 100%; height: auto; border-radius: 20px; box-shadow: 0 30px 80px rgba(0,0,0,0.55); }
+    .coach .section-label { justify-content: flex-start; margin-bottom: 14px; }
+    .coach-name { text-transform: uppercase; color: #fff; font-size: clamp(44px, 6vw, 84px); line-height: 1; }
+    .coach-role { margin-top: 14px; color: var(--blue-bright); font-size: 12px; font-weight: 800; letter-spacing: 2px; }
+    .coach-line { max-width: 520px; margin-top: 22px; color: rgba(255,255,255,0.75); font-size: 18px; line-height: 1.6; }
+    .coach-stats { display: grid; grid-template-columns: repeat(3, auto); justify-content: start; margin: 32px 0 34px; border-top: 1px solid var(--card-border); border-bottom: 1px solid var(--card-border); }
+    .coach-stats div { padding: 20px 30px; }
+    .coach-stats div:first-child { padding-left: 0; }
+    .coach-stats div + div { border-left: 1px solid var(--card-border); }
+    .coach-stats strong { display: block; font-size: 30px; font-weight: 300; color: #fff; line-height: 1.1; }
+    .coach-stats span { display: block; margin-top: 6px; color: var(--gray); font-size: 11px; font-weight: 800; letter-spacing: 2px; }
+    @media (max-width: 900px) {
+      .coach-inner { grid-template-columns: 1fr; gap: 48px; }
+      .coach-photo { max-width: 320px; }
+      .coach-line { font-size: 16px; }
+      .coach-stats { grid-template-columns: repeat(3, 1fr); }
+      .coach-stats div { padding: 16px 10px; }
+      .coach-stats strong { font-size: 22px; }
+      .coach-stats span { font-size: 9px; letter-spacing: 1px; }
+      .coach .btn-primary { display: block; text-align: center; }
+    }
     /* every heading uses the thin Figtree look from the Performance Lab hero */
     h1, h2, h3, .section-title, .hiw-title, .plan-name { font-weight: 300 !important; font-style: normal !important; letter-spacing: -0.01em !important; }

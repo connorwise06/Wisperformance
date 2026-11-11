@@ -26,7 +26,7 @@
     '.program-card', '.pricing-card', '.consult-banner', '.hiw-step',
     '.faq-item', '.product-card', '.free-section-left', '.free-section-right',
     '.form-wrap', '.contact-email-wrap',
-    '.way', '.proof-photo', '.proof-stat'
+    '.way', '.pillar', '.lab-get-item', '.coach-photo', '.coach-text'
   ].join(',');
   var els = Array.prototype.filter.call(document.querySelectorAll(selector), function (el) {
     return el.getBoundingClientRect().top > window.innerHeight;
