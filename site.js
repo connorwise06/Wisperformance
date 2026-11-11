@@ -25,7 +25,8 @@
     '.about-eyebrow', '.about-name', '.about-role', '.about-text', '.about-card',
     '.program-card', '.pricing-card', '.consult-banner', '.hiw-step',
     '.faq-item', '.product-card', '.free-section-left', '.free-section-right',
-    '.form-wrap', '.contact-email-wrap'
+    '.form-wrap', '.contact-email-wrap',
+    '.way', '.proof-photo', '.proof-stat'
   ].join(',');
   var els = Array.prototype.filter.call(document.querySelectorAll(selector), function (el) {
     return el.getBoundingClientRect().top > window.innerHeight;
@@ -53,6 +54,34 @@
     });
   }, { rootMargin: '0px 0px -8% 0px', threshold: 0.12 });
   els.forEach(function (el) { io.observe(el); });
+})();
+
+// Result numbers count up from zero the first time they scroll into view.
+// The page already holds the final values, so nothing breaks without this.
+(function () {
+  var els = document.querySelectorAll('[data-count]');
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!els.length || reduce || !('IntersectionObserver' in window)) return;
+  function show(el, v) {
+    el.textContent = (el.dataset.prefix || '') + v.toFixed(+el.dataset.decimals || 0) + (el.dataset.suffix || '');
+  }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      var el = e.target, end = parseFloat(el.dataset.count), t0 = null;
+      io.unobserve(el);
+      requestAnimationFrame(function step(t) {
+        if (t0 === null) t0 = t;
+        var p = Math.min((t - t0) / 1400, 1);
+        show(el, end * (1 - Math.pow(1 - p, 3)));
+        if (p < 1) requestAnimationFrame(step);
+      });
+    });
+  }, { threshold: 0.6 });
+  Array.prototype.forEach.call(els, function (el) {
+    if (el.getBoundingClientRect().top > window.innerHeight) show(el, 0);
+    io.observe(el);
+  });
 })();
 
 // Contact form: send to Formspree in the background and show a thank-you
