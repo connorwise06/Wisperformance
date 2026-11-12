@@ -1511,5 +1511,35 @@
       .coach-stats span { font-size: 9px; letter-spacing: 1px; }
       .coach .btn-primary { display: block; text-align: center; }
     }
+    /* ── MONITORING PAGES ── */
+    .ways-grid--two { grid-template-columns: repeat(2, 1fr) !important; max-width: 820px; }
+    .mon-hub { min-height: 0; }
+    .lab-hero > .section-label { margin-bottom: 22px; animation-delay: 0.05s; }
+    .mon-why .section-title, .mon-shots .section-title, .mon-features-wrap .section-title { margin-bottom: 40px; }
+    .mon-why .lab-fixes { max-width: 820px; margin: 0 auto 16px; }
+    .mon-why .lab-fixes li { background: var(--card-bg); padding: 18px 20px; }
+    .mon-why .lab-fixes span { font-size: 15px; }
+    .mon-why .lab-fixes strong { font-size: 17px; }
+    .mon-why .lab-get-row { max-width: 820px; }
+    .mon-shots-grid { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .mon-shots-grid img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 18px; border: 1px solid var(--card-border); display: block; }
+    .mon-shots-grid img:last-child { object-position: center 65%; }
+    .mon-shot { max-width: 720px; margin: 0 auto 32px; }
+    .mon-shot img { width: 100%; height: auto; display: block; border-radius: 18px; border: 1px solid var(--card-border); box-shadow: 0 30px 80px rgba(0,0,0,0.5); }
+    .mon-features { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .mon-features div { padding: 24px 22px; border-radius: 16px; background: var(--card-bg); border: 1px solid var(--card-border); }
+    .mon-features h3 { font-size: 22px; margin-bottom: 8px; }
+    .mon-features p { color: rgba(255,255,255,0.72); font-size: 15px; line-height: 1.55; }
+    .showcase { max-width: 1040px; margin: 0 auto; }
+    .showcase-tabs { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-bottom: 18px; }
+    .showcase-tabs button { padding: 10px 18px; border-radius: 30px; border: 1px solid var(--card-border); background: var(--card-bg); color: rgba(255,255,255,0.75); font: inherit; font-size: 13px; font-weight: 700; cursor: pointer; transition: background 0.25s, border-color 0.25s, color 0.25s; }
+    .showcase-tabs button:hover { border-color: var(--blue); color: #fff; }
+    .showcase-tabs button.is-on { background: var(--blue); border-color: var(--blue); color: #fff; }
+    .showcase-frame figure { display: none; margin: 0; }
+    .showcase-frame figure.is-on { display: block; animation: wpRise 0.5s cubic-bezier(.2,.7,.2,1) both; }
+    .showcase-frame img { display: block; width: 100%; height: auto; max-height: 640px; object-fit: contain; background: #0b0b0c; border-radius: 18px; border: 1px solid var(--card-border); box-shadow: 0 30px 80px rgba(0,0,0,0.5); }
+    .showcase-frame figcaption { margin-top: 16px; text-align: center; color: rgba(255,255,255,0.75); font-size: 16px; line-height: 1.5; }    @media (max-width: 900px) { .mon-features { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 600px) { .ways-grid--two, .mon-shots-grid, .mon-features { grid-template-columns: 1fr !important; } }
     /* every heading uses the thin Figtree look from the Performance Lab hero */
     h1, h2, h3, .section-title, .hiw-title, .plan-name { font-weight: 300 !important; font-style: normal !important; letter-spacing: -0.01em !important; }
+    @media (max-width: 360px) { nav { padding-left: 10px; padding-right: 10px; gap: 8px; } nav img { height: 26px !important; } .nav-links { gap: 7px; } .nav-links a { font-size: 9.5px; letter-spacing: 0; } }
