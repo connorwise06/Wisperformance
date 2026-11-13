@@ -1,8 +1,13 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --blue: #1A6FD4;
-      --blue-bright: #2E8DFF;
+      /* black and white look: the old blue variables now hold white, and --accent is the little bit of blue that's left */
+      --blue: #FFFFFF;
+      --blue-bright: #FFFFFF;
+      --accent: #2E8DFF;
+      --display: 'Archivo', 'Arial Black', Impact, sans-serif;
+      --body: 'Inter', 'Segoe UI', system-ui, sans-serif;
+      --mono: 'JetBrains Mono', ui-monospace, Consolas, monospace;
       --dark: #0B0B0C;
       --dark2: #111113;
       --card-bg: #161618;
@@ -14,7 +19,7 @@
     html { scroll-behavior: smooth; }
 
     body {
-      font-family: 'Figtree', sans-serif;
+      font-family: var(--body);
       background: var(--dark);
       color: var(--white);
       overflow-x: hidden;
@@ -36,7 +41,7 @@
     }
 
     .nav-logo {
-      font-family: 'Figtree', sans-serif;
+      font-family: var(--body);
       font-style: italic;
       font-weight: 900;
       font-size: 32px;
@@ -50,7 +55,7 @@
     .nav-links a {
       color: var(--white);
       text-decoration: none;
-      font-family: 'Figtree', sans-serif;
+      font-family: var(--body);
       font-weight: 600;
       font-size: 15px;
       letter-spacing: 1.5px;
@@ -65,7 +70,7 @@
       color: white;
       border: none;
       padding: 11px 24px;
-      font-family: 'Figtree', sans-serif;
+      font-family: var(--body);
       font-weight: 700;
       font-size: 14px;
       letter-spacing: 1.5px;
@@ -83,7 +88,7 @@
       justify-content: center;
       gap: 14px;
       margin-bottom: 22px;
-      font-family: 'Figtree', sans-serif;
+      font-family: var(--body);
       font-weight: 700;
       font-size: 13px;
       letter-spacing: 3.5px;
@@ -114,7 +119,7 @@
       display: flex;
       align-items: center;
       gap: 12px;
-      font-family: 'Figtree', sans-serif;
+      font-family: var(--body);
       font-weight: 700;
       font-size: 19px;
       letter-spacing: 4px;
@@ -130,7 +135,7 @@
     }
 
     #hero h1 {
-      font-family: 'Figtree', sans-serif;
+      font-family: var(--body);
       font-weight: 400;
       font-size: clamp(72px, 10vw, 140px);
       line-height: 0.9;
@@ -155,14 +160,14 @@
     .hero-feature:last-child { border-right: none; }
     .hero-feature:first-child { padding-left: 0; }
     .hf-icon { color: var(--blue-bright); margin-bottom: 14px; }
-    .hf-title { font-family: 'Figtree', sans-serif; font-weight: 700; font-size: 18px; color: white; margin-bottom: 8px; letter-spacing: 0.5px; }
+    .hf-title { font-family: var(--body); font-weight: 700; font-size: 18px; color: white; margin-bottom: 8px; letter-spacing: 0.5px; }
     .hf-desc { font-size: 14px; color: var(--gray); line-height: 1.6; }
 
     .btn-primary {
       background: var(--blue);
       color: white;
       padding: 22px 48px;
-      font-family: 'Figtree', sans-serif;
+      font-family: var(--body);
       font-weight: 700;
       font-size: 19px;
       letter-spacing: 2px;
@@ -179,7 +184,7 @@
       background: transparent;
       color: white;
       padding: 22px 48px;
-      font-family: 'Figtree', sans-serif;
+      font-family: var(--body);
       font-weight: 700;
       font-size: 19px;
       letter-spacing: 2px;
@@ -194,7 +199,7 @@
     section { padding: 100px 60px; }
 
     .section-title {
-      font-family: 'Figtree', sans-serif;
+      font-family: var(--body);
       font-weight: 900;
       font-size: clamp(52px, 6vw, 80px);
       letter-spacing: 0.5px;
@@ -246,7 +251,7 @@
     }
 
     .badge {
-      font-family: 'Figtree', sans-serif;
+      font-family: var(--body);
       font-weight: 700;
       font-size: 10px;
       letter-spacing: 1.5px;
@@ -277,7 +282,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-family: 'Figtree', sans-serif;
+      font-family: var(--body);
       font-style: italic;
       font-weight: 900;
       font-size: 15px;
@@ -285,7 +290,7 @@
     }
 
     .th-type {
-      font-family: 'Figtree', sans-serif;
+      font-family: var(--body);
       font-size: 11px;
       font-weight: 700;
       letter-spacing: 2px;
@@ -293,7 +298,7 @@
     }
 
     .program-card h3 {
-      font-family: 'Figtree', sans-serif;
+      font-family: var(--body);
       font-weight: 800;
       font-size: 22px;
       text-transform: uppercase;
@@ -302,7 +307,7 @@
     }
 
     .via-th {
-      font-family: 'Figtree', sans-serif;
+      font-family: var(--body);
       font-size: 11px;
       font-weight: 700;
       letter-spacing: 2px;
@@ -341,7 +346,7 @@
       text-align: center;
       text-align: center;
       padding: 14px;
-      font-family: 'Figtree', sans-serif;
+      font-family: var(--body);
       font-weight: 700;
       font-size: 14px;
       letter-spacing: 2px;
@@ -389,7 +394,7 @@
       transform: translateX(-50%);
       background: var(--blue);
       color: white;
-      font-family: 'Figtree', sans-serif;
+      font-family: var(--body);
       font-weight: 700;
       font-size: 11px;
       letter-spacing: 2.5px;
@@ -398,7 +403,7 @@
     }
 
     .plan-name {
-      font-family: 'Figtree', sans-serif;
+      font-family: var(--body);
       font-weight: 700;
       font-size: 16px;
       letter-spacing: 3px;
@@ -407,7 +412,7 @@
     }
 
     .plan-price {
-      font-family: 'Figtree', sans-serif;
+      font-family: var(--body);
       font-weight: 900;
       font-size: 72px;
       line-height: 1;
@@ -417,7 +422,7 @@
     .plan-price sup { font-size: 28px; vertical-align: super; }
     .plan-price .mo { font-size: 18px; font-weight: 500; font-style: normal; letter-spacing: 0; color: rgba(255,255,255,0.55); margin-left: 8px; }
     /* every big price uses the same Figtree Black Italic */
-    .plan-price, .elite-price strong { font-family: 'Figtree', sans-serif; font-weight: 300; font-style: normal; letter-spacing: -0.02em; line-height: 1; color: #fff; }
+    .plan-price, .elite-price strong { font-family: var(--body); font-weight: 300; font-style: normal; letter-spacing: -0.02em; line-height: 1; color: #fff; }
 
     .plan-tagline {
       font-style: italic;
@@ -456,7 +461,7 @@
       width: 100%;
       text-align: center;
       padding: 15px;
-      font-family: 'Figtree', sans-serif;
+      font-family: var(--body);
       font-weight: 700;
       font-size: 14px;
       letter-spacing: 2px;
@@ -473,12 +478,12 @@
 
     /* How It Works */
     .how-it-works { max-width: 860px; margin: 48px auto 0; }
-    .hiw-title { font-family: 'Figtree', sans-serif; font-weight: 700; font-size: 16px; letter-spacing: 3px; color: var(--blue-bright); margin-bottom: 16px; text-transform: uppercase; }
+    .hiw-title { font-family: var(--body); font-weight: 700; font-size: 16px; letter-spacing: 3px; color: var(--blue-bright); margin-bottom: 16px; text-transform: uppercase; }
     .hiw-steps { display: flex; flex-direction: column; gap: 0; border-radius: 12px; overflow: hidden; }
     .hiw-step { display: flex; align-items: flex-start; gap: 20px; padding: 28px 32px; background: var(--card-bg); border-bottom: 1px solid rgba(255,255,255,0.07); }
     .hiw-step:last-child { border-bottom: none; }
-    .hiw-num { font-family: 'Figtree', sans-serif; font-weight: 700; font-size: 18px; color: var(--blue-bright); min-width: 32px; padding-top: 2px; }
-    .hiw-step-title { font-family: 'Figtree', sans-serif; font-weight: 700; font-size: 22px; color: white; margin-bottom: 6px; letter-spacing: 0.5px; }
+    .hiw-num { font-family: var(--body); font-weight: 700; font-size: 18px; color: var(--blue-bright); min-width: 32px; padding-top: 2px; }
+    .hiw-step-title { font-family: var(--body); font-weight: 700; font-size: 22px; color: white; margin-bottom: 6px; letter-spacing: 0.5px; }
     .hiw-body p { color: var(--gray); font-size: 15px; margin: 0; line-height: 1.6; }
 
     /* Consult Banner */
@@ -514,7 +519,7 @@
     }
 
     .consult-banner h3 {
-      font-family: 'Figtree', sans-serif;
+      font-family: var(--body);
       font-weight: 800;
       font-size: 18px;
       text-transform: uppercase;
@@ -536,7 +541,7 @@
       display: flex;
       align-items: center;
       gap: 12px;
-      font-family: 'Figtree', sans-serif;
+      font-family: var(--body);
       font-weight: 700;
       font-size: 13px;
       letter-spacing: 3.5px;
@@ -551,7 +556,7 @@
     }
 
     .about-name {
-      font-family: 'Figtree', sans-serif;
+      font-family: var(--body);
       font-weight: 900;
       font-size: clamp(64px, 9vw, 120px);
       line-height: 0.9;
@@ -563,7 +568,7 @@
     .about-name .blue { color: var(--blue-bright); }
 
     .about-role {
-      font-family: 'Figtree', sans-serif;
+      font-family: var(--body);
       font-weight: 700;
       font-size: 16px;
       letter-spacing: 3px;
@@ -605,7 +610,7 @@
     .about-card-body { padding: 26px 32px 30px; }
 
     .about-card-label {
-      font-family: 'Figtree', sans-serif;
+      font-family: var(--body);
       font-weight: 700;
       font-size: 12px;
       letter-spacing: 3px;
@@ -618,7 +623,7 @@
     .about-stat:last-child { border-bottom: none; padding-bottom: 0; }
 
     .about-stat-num {
-      font-family: 'Figtree', sans-serif;
+      font-family: var(--body);
       font-style: italic;
       font-weight: 900;
       font-size: 40px;
@@ -657,7 +662,7 @@
     .product-body { padding: 20px; }
 
     .product-tag {
-      font-family: 'Figtree', sans-serif;
+      font-family: var(--body);
       font-size: 11px;
       font-weight: 700;
       letter-spacing: 2px;
@@ -666,7 +671,7 @@
     }
 
     .product-card h3 {
-      font-family: 'Figtree', sans-serif;
+      font-family: var(--body);
       font-weight: 800;
       font-size: 17px;
       text-transform: uppercase;
@@ -695,7 +700,7 @@
 
     .form-group label {
       display: block;
-      font-family: 'Figtree', sans-serif;
+      font-family: var(--body);
       font-weight: 700;
       font-size: 12px;
       letter-spacing: 2px;
@@ -710,7 +715,7 @@
       color: white;
       padding: 14px 16px;
       font-size: 14px;
-      font-family: 'Figtree', sans-serif;
+      font-family: var(--body);
       transition: border-color 0.2s;
     }
 
@@ -728,7 +733,7 @@
       background: var(--blue);
       color: white;
       border: none;
-      font-family: 'Figtree', sans-serif;
+      font-family: var(--body);
       font-weight: 700;
       font-size: 16px;
       letter-spacing: 2px;
@@ -771,7 +776,7 @@
     }
 
     .footer-logo {
-      font-family: 'Figtree', sans-serif;
+      font-family: var(--body);
       font-style: italic;
       font-weight: 900;
       font-size: 40px;
@@ -780,7 +785,7 @@
     }
 
     .footer-brand {
-      font-family: 'Figtree', sans-serif;
+      font-family: var(--body);
       font-weight: 700;
       font-size: 13px;
       letter-spacing: 2.5px;
@@ -805,7 +810,7 @@
     .social-link:hover { border-color: var(--blue); color: var(--blue-bright); }
 
     .footer-col h4 {
-      font-family: 'Figtree', sans-serif;
+      font-family: var(--body);
       font-weight: 700;
       font-size: 13px;
       letter-spacing: 2.5px;
@@ -858,19 +863,19 @@
     }
     .free-strip-text { display: flex; flex-direction: column; gap: 4px; }
     .free-strip-label {
-      font-family: 'Figtree', sans-serif;
+      font-family: var(--body);
       font-size: 11px; font-weight: 700; letter-spacing: 2.5px;
       color: rgba(255,255,255,0.7); text-transform: uppercase;
     }
     .free-strip-title {
-      font-family: 'Figtree', sans-serif;
+      font-family: var(--body);
       font-size: 26px; font-weight: 800; letter-spacing: 1px;
       color: white; text-transform: uppercase;
     }
     .free-strip-title span { color: #A8D8FF; }
     .btn-strip {
       background: white; color: var(--blue);
-      font-family: 'Figtree', sans-serif;
+      font-family: var(--body);
       font-weight: 800; font-size: 14px; letter-spacing: 2px;
       padding: 14px 28px; text-decoration: none;
       white-space: nowrap; flex-shrink: 0;
@@ -895,12 +900,12 @@
       background: rgba(46,141,255,0.15);
       border: 1px solid var(--blue);
       color: var(--blue-bright);
-      font-family: 'Figtree', sans-serif;
+      font-family: var(--body);
       font-size: 11px; font-weight: 700; letter-spacing: 2.5px;
       padding: 5px 14px; margin-bottom: 16px;
     }
     .free-section h2 {
-      font-family: 'Figtree', sans-serif;
+      font-family: var(--body);
       font-size: 48px; font-weight: 900; line-height: 1;
       color: white; text-transform: uppercase; margin-bottom: 16px;
     }
@@ -924,23 +929,23 @@
       box-shadow: 20px 20px 60px rgba(0,0,0,0.5);
     }
     .free-pdf-mock .pdf-wp {
-      font-family: 'Figtree', sans-serif;
+      font-family: var(--body);
       font-size: 36px; font-weight: 900; color: white; letter-spacing: 2px;
     }
     .free-pdf-mock .pdf-label {
-      font-family: 'Figtree', sans-serif;
+      font-family: var(--body);
       font-size: 10px; font-weight: 700; color: rgba(255,255,255,0.6);
       letter-spacing: 2px; text-align: center; padding: 0 16px;
     }
     .free-pdf-mock .pdf-weeks {
-      font-family: 'Figtree', sans-serif;
+      font-family: var(--body);
       font-size: 13px; font-weight: 700; color: var(--blue-bright);
       letter-spacing: 1.5px;
     }
     .btn-free {
       display: inline-block;
       background: var(--blue); color: white;
-      font-family: 'Figtree', sans-serif;
+      font-family: var(--body);
       font-weight: 800; font-size: 15px; letter-spacing: 2px;
       padding: 16px 36px; text-decoration: none;
       transition: background 0.2s;
@@ -955,7 +960,7 @@
     #adj-toggle {
       position: fixed; bottom: 20px; right: 20px; z-index: 9999;
       background: var(--blue); color: white; border: none;
-      padding: 10px 18px; font-family: 'Figtree', sans-serif;
+      padding: 10px 18px; font-family: var(--body);
       font-weight: 700; font-size: 13px; letter-spacing: 1.5px;
       cursor: pointer; box-shadow: 0 4px 16px rgba(0,0,0,0.5);
     }
@@ -966,7 +971,7 @@
       border: 1px solid rgba(255,255,255,0.12);
       padding: 16px 20px; width: 260px;
       box-shadow: 0 8px 32px rgba(0,0,0,0.7);
-      font-family: 'Figtree', sans-serif;
+      font-family: var(--body);
     }
     #adj-panel.open { display: block; }
     #adj-panel h4 {
@@ -1148,7 +1153,7 @@
     /* ── CONTACT FORM EXTRAS ── */
     .form-group select {
       width: 100%; background-color: rgba(255,255,255,0.05); border: 1px solid var(--card-border); color: white;
-      padding: 14px 44px 14px 16px; font-size: 14px; font-family: 'Figtree', sans-serif; appearance: none; -webkit-appearance: none; cursor: pointer;
+      padding: 14px 44px 14px 16px; font-size: 14px; font-family: var(--body); appearance: none; -webkit-appearance: none; cursor: pointer;
       background-image: linear-gradient(45deg, transparent 50%, var(--blue-bright) 50%), linear-gradient(135deg, var(--blue-bright) 50%, transparent 50%);
       background-position: calc(100% - 22px) 52%, calc(100% - 16px) 52%; background-size: 6px 6px, 6px 6px; background-repeat: no-repeat;
       transition: border-color 0.2s;
@@ -1541,5 +1546,111 @@
     .showcase-frame figcaption { margin-top: 16px; text-align: center; color: rgba(255,255,255,0.75); font-size: 16px; line-height: 1.5; }    @media (max-width: 900px) { .mon-features { grid-template-columns: 1fr 1fr; } }
     @media (max-width: 600px) { .ways-grid--two, .mon-shots-grid, .mon-features { grid-template-columns: 1fr !important; } }
     /* every heading uses the thin Figtree look from the Performance Lab hero */
-    h1, h2, h3, .section-title, .hiw-title, .plan-name { font-weight: 300 !important; font-style: normal !important; letter-spacing: -0.01em !important; }
+
     @media (max-width: 360px) { nav { padding-left: 10px; padding-right: 10px; gap: 8px; } nav img { height: 26px !important; } .nav-links { gap: 7px; } .nav-links a { font-size: 9.5px; letter-spacing: 0; } }
+
+    /* ── BLACK & WHITE THEME ── */
+    /* white buttons and badges get dark text; hovering turns them blue */
+    .btn-nav, .btn-primary, .badge-featured, .btn-card.fill, .most-popular, .btn-full.fill, .btn-submit, .btn-free, #adj-toggle,
+    .form-thanks-check, .lab-steps li::before, .lab-prog-plus, .showcase-tabs button.is-on, .lab-prog:hover .lab-prog-open { color: #0B0B0C !important; }
+    .btn-nav:hover, .btn-primary:hover, .btn-card.fill:hover, .btn-full.fill:hover, .btn-submit:hover, .btn-free:hover, .btn-card.blue-outline:hover { background: var(--accent) !important; color: #fff !important; box-shadow: 0 10px 24px rgba(46,141,255,0.35) !important; }
+    .lab-prog:hover .lab-prog-open { background: #fff; border-color: #fff; }
+    .lab-prog-open, .lab-prog-tags span, .way-price { border-color: rgba(255,255,255,0.3) !important; background: rgba(255,255,255,0.06) !important; }
+    /* the little blue: progress bar, hover lines, and the home headline */
+    .scroll-progress { background: var(--accent); }
+    .way::after, .lab-prog::after, .pillar::after { background: var(--accent) !important; }
+    #hero h1 .blue { color: var(--accent) !important; }
+    .nav-links a:hover { color: var(--accent); }
+
+    /* ── TYPE: Archivo headlines, Inter text, JetBrains Mono labels ── */
+    body { font-family: var(--body); -webkit-font-smoothing: antialiased; }
+    h1, h2, h3, .section-title, .hiw-title, .plan-name, .about-name,
+    .plan-price, .elite-price strong, .lab-hero-stats strong, .proof-stat strong, .lab-results strong {
+      font-family: var(--display) !important; font-weight: 900 !important; font-style: italic !important; font-stretch: 112%;
+      text-transform: uppercase; letter-spacing: -0.01em !important;
+    }
+    h1, .section-title { line-height: 0.95 !important; }
+    .section-label, .hero-eyebrow, .about-eyebrow, .way-price, .way-best span, .lab-prog-tags span, .product-tag, .via-th,
+    .coach-role, .coach-creds span, .lab-hero-stats span, .elite-price-note, .lab-modal-label, .pillar-body span, .lab-modal-fine,
+    .most-popular, .badge, .th-type, .lab-modal-phases li span, .lab-results span, .ams-fine, .elite-num, .hiw-num, .about-role,
+    .lab-hero-more, .plan-more, .lab-prog-open, .way-go, .elite-price span, .plan-price .mo {
+      font-family: var(--mono) !important; letter-spacing: 0.14em !important;
+    }
+    .btn-nav, .btn-primary, .btn-outline, .btn-card, .btn-full, .btn-submit, .btn-free, .nav-links a, .showcase-tabs button {
+      font-family: var(--display) !important; font-stretch: 110%; font-weight: 800 !important; text-transform: uppercase; letter-spacing: 0.06em !important;
+    }
+    /* sizes tuned for the wider Archivo headlines */
+    #hero h1 { font-size: clamp(36px, 7vw, 104px) !important; }
+    .lab-hero-title, .team-hero-title, .ams-title { font-size: clamp(30px, 6.4vw, 88px) !important; }
+    .elite-title { font-size: clamp(32px, 4.8vw, 72px) !important; }
+    .section-title { font-size: clamp(30px, 4.2vw, 58px) !important; }
+    .coach-name { font-size: clamp(36px, 5.4vw, 76px) !important; }
+    .way h3 { font-size: 22px !important; }
+    .lab-prog h3 { font-size: clamp(24px, 3vw, 34px) !important; }
+    .plan-price, .elite-price strong { font-size: 58px !important; }
+    .lab-hero-stats strong { font-size: 22px !important; }
+    @media (max-width: 768px) {
+      #hero h1 { font-size: clamp(25px, 8.3vw, 64px) !important; }
+      .lab-hero-title, .team-hero-title { font-size: clamp(26px, 8.6vw, 56px) !important; }
+      .elite-title { font-size: clamp(26px, 7.6vw, 48px) !important; }
+      .section-title { font-size: clamp(24px, 7.6vw, 40px) !important; }
+      .program-card h3, .lab-prog h3, .pillar-body h3 { font-size: 22px !important; }
+      .plan-price, .elite-price strong { font-size: 42px !important; }
+      .lab-hero-stats strong { font-size: 17px !important; }
+      .lab-hero-stats span { font-size: 9px !important; letter-spacing: 0.06em !important; }
+    }
+    .free-section-left { min-width: 0; }
+    .free-section-right { flex-shrink: 1; min-width: 0; }
+    .free-section-right img { max-width: 100%; height: auto; }
+    footer a, .contact-email-wrap a { overflow-wrap: anywhere; }
+    @media (max-width: 480px) { .nav-links a { font-stretch: 100% !important; letter-spacing: 0.02em !important; font-size: 10px !important; } .nav-links { gap: 10px; } }
+    @media (max-width: 360px) { .nav-links a { font-size: 9px !important; letter-spacing: 0 !important; } .nav-links { gap: 7px; } }
+    /* home headline: solid WISE, outlined PERFORMANCE */
+    #hero h1 .blue { color: transparent !important; -webkit-text-stroke: 2px #fff; }
+    @media (max-width: 768px) { #hero h1 .blue { -webkit-text-stroke-width: 1.5px; } }
+    .free-section h2 { font-size: clamp(28px, 3.4vw, 44px) !important; }
+    .legal-page, .legal-page * { overflow-wrap: anywhere; }
+    @media (max-width: 360px) { .team-hero-stats strong { font-size: 15px !important; } .team-hero-stats div { padding: 14px 4px !important; } }
+    /* Diamond-style panels: a faint light sheen at the top of every card */
+    .pricing-card, .program-card, .product-card, .way, .lab-prog, .lab-get-item, .elite-feature, .mon-features div, .faq-item, .lab-modal {
+      background-image: linear-gradient(180deg, rgba(255,255,255,0.035), transparent 40%) !important;
+    }
+    nav { background: rgba(11,11,12,0.88) !important; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--card-border); }
+    nav.scrolled { background: rgba(11,11,12,0.97) !important; }
+    h1, h2, h3, .section-title, .plan-name { word-spacing: 0.12em; }
+    /* hero feature strip, Diamond-style: one bordered panel split into cells */
+    #hero .hero-features { gap: 0 !important; margin-top: 64px; padding-top: 0 !important; border: 1px solid var(--card-border) !important; border-radius: 12px; overflow: hidden; background: var(--card-bg); background-image: linear-gradient(180deg, rgba(255,255,255,0.035), transparent 40%); }
+    #hero .hero-feature { padding: 24px 22px !important; border-right: 1px solid var(--card-border) !important; border-bottom: none !important; text-align: left !important; align-items: flex-start !important; gap: 6px; transition: background 0.2s; }
+    #hero .hero-feature:last-child { border-right: none !important; }
+    #hero .hero-feature:hover { background: #1C1C1F; }
+    #hero .hf-icon { color: var(--accent); margin-bottom: 8px; }
+    #hero .hf-icon svg { width: 24px; height: 24px; stroke-width: 1.8; }
+    #hero .hf-title { font-family: var(--display); font-weight: 800; font-stretch: 112%; font-size: 16px; text-transform: uppercase; letter-spacing: 0.02em; line-height: 1.2; margin-bottom: 2px; }
+    #hero .hf-desc { font-size: 14px; color: var(--gray); line-height: 1.55; }
+    @media (max-width: 980px) {
+      #hero .hero-features { grid-template-columns: 1fr 1fr !important; }
+      #hero .hero-feature:nth-child(2) { border-right: none !important; }
+      #hero .hero-feature:nth-child(-n+2) { border-bottom: 1px solid var(--card-border) !important; }
+    }
+    @media (max-width: 560px) {
+      #hero .hero-features { grid-template-columns: 1fr !important; margin-top: 44px; }
+      #hero .hero-feature { border-right: none !important; border-bottom: 1px solid var(--card-border) !important; padding: 20px !important; }
+      #hero .hero-feature:last-child { border-bottom: none !important; }
+    }
+    /* more blue, used the way Diamond uses its red: labels, bullets, step numbers and the main button */
+    .section-label, .hero-eyebrow, .about-eyebrow, .coach-role, .lab-modal-label, .pillar-body span, .coach-creds span, .lab-results strong { color: var(--accent) !important; }
+    .section-label::before, .section-label::after, .hero-eyebrow::before, .about-eyebrow::before { background: var(--accent) !important; }
+    .feature-list li::before, .check-list li::before { color: var(--accent) !important; }
+    .free-perks li::before { background: var(--accent) !important; }
+    .lab-steps li::before { background: var(--accent) !important; color: #fff !important; }
+    .btn-primary, .btn-nav { background: var(--accent) !important; color: #fff !important; }
+    .btn-primary:hover, .btn-nav:hover { background: #5AA6FF !important; color: #fff !important; }
+    /* home hero: Connor coaching, softly blurred and darkened behind the text */
+    #hero { position: relative; overflow: hidden; background: var(--dark) !important; isolation: isolate; }
+    #hero::before { content: ''; position: absolute; inset: -24px; z-index: -2; background: url('hero-coach.jpg?v=2') 150% 84% / 75% auto no-repeat; filter: grayscale(1) blur(1px) brightness(0.8) contrast(1.12); -webkit-mask-image: linear-gradient(90deg, transparent 37%, #000 66%); mask-image: linear-gradient(90deg, transparent 37%, #000 66%); }
+    #hero::after { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(11,11,12,0.94) 0%, rgba(11,11,12,0.7) 42%, rgba(11,11,12,0.05) 70%, rgba(11,11,12,0.15) 100%), linear-gradient(180deg, transparent 60%, var(--dark) 100%), linear-gradient(rgba(46,141,255,0.10), rgba(46,141,255,0.10)); }
+    @media (max-width: 768px) {
+      #hero::before { inset: -12px -12px auto -12px; height: 820px; background-size: 130% auto; background-position: 50% 18%; -webkit-mask-image: linear-gradient(180deg, #000 55%, transparent 100%); mask-image: linear-gradient(180deg, #000 55%, transparent 100%); filter: grayscale(1) blur(1px) brightness(0.78) contrast(1.12); }
+      #hero::after { background: linear-gradient(180deg, rgba(11,11,12,0.35) 0%, rgba(11,11,12,0.62) 45%, var(--dark) 85%); }
+    }
+    .pricing-card[data-href] { cursor: pointer; }

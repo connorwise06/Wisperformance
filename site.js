@@ -112,3 +112,14 @@
       });
   });
 })();
+
+// Cards with data-href open their page when clicked anywhere,
+// except on the buttons and links inside them, which keep doing their own thing.
+(function () {
+  document.querySelectorAll('[data-href]').forEach(function (card) {
+    card.addEventListener('click', function (e) {
+      if (e.target.closest('a, button')) return;
+      window.location.href = card.dataset.href;
+    });
+  });
+})();
