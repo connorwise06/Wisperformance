@@ -1606,8 +1606,7 @@
     @media (max-width: 480px) { .nav-links a { font-stretch: 100% !important; letter-spacing: 0.02em !important; font-size: 10px !important; } .nav-links { gap: 10px; } }
     @media (max-width: 360px) { .nav-links a { font-size: 9px !important; letter-spacing: 0 !important; } .nav-links { gap: 7px; } }
     /* home headline: solid WISE, outlined PERFORMANCE */
-    #hero h1 .blue { color: transparent !important; -webkit-text-stroke: 2px #fff; }
-    @media (max-width: 768px) { #hero h1 .blue { -webkit-text-stroke-width: 1.5px; } }
+    #hero h1 .blue { color: #fff !important; -webkit-text-stroke: 0; }
     .free-section h2 { font-size: clamp(28px, 3.4vw, 44px) !important; }
     .legal-page, .legal-page * { overflow-wrap: anywhere; }
     @media (max-width: 360px) { .team-hero-stats strong { font-size: 15px !important; } .team-hero-stats div { padding: 14px 4px !important; } }
@@ -1647,10 +1646,10 @@
     .btn-primary:hover, .btn-nav:hover { background: #5AA6FF !important; color: #fff !important; }
     /* home hero: Connor coaching, softly blurred and darkened behind the text */
     #hero { position: relative; overflow: hidden; background: var(--dark) !important; isolation: isolate; }
-    #hero::before { content: ''; position: absolute; inset: -24px; z-index: -2; background: url('hero-coach.jpg?v=2') 150% 84% / 75% auto no-repeat; filter: grayscale(1) blur(1px) brightness(0.8) contrast(1.12); -webkit-mask-image: linear-gradient(90deg, transparent 37%, #000 66%); mask-image: linear-gradient(90deg, transparent 37%, #000 66%); }
-    #hero::after { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(11,11,12,0.94) 0%, rgba(11,11,12,0.7) 42%, rgba(11,11,12,0.05) 70%, rgba(11,11,12,0.15) 100%), linear-gradient(180deg, transparent 60%, var(--dark) 100%), linear-gradient(rgba(46,141,255,0.10), rgba(46,141,255,0.10)); }
+    #hero::before { content: ''; position: absolute; inset: -24px; z-index: -2; background: url('hero-sprint.jpg?v=3') 102% -22px / 45% auto no-repeat; filter: contrast(1.05); -webkit-mask-image: linear-gradient(90deg, transparent 56%, rgba(0,0,0,0.08) 60%, rgba(0,0,0,0.25) 64%, rgba(0,0,0,0.5) 68%, rgba(0,0,0,0.78) 73%, #000 79%), linear-gradient(180deg, #000 82%, transparent 92%); -webkit-mask-composite: source-in; mask-image: linear-gradient(90deg, transparent 56%, rgba(0,0,0,0.08) 60%, rgba(0,0,0,0.25) 64%, rgba(0,0,0,0.5) 68%, rgba(0,0,0,0.78) 73%, #000 79%), linear-gradient(180deg, #000 82%, transparent 92%); mask-composite: intersect; }
+    #hero::after { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(11,11,12,0.95) 0%, rgba(11,11,12,0.85) 45%, rgba(11,11,12,0.55) 58%, rgba(11,11,12,0.22) 70%, rgba(11,11,12,0.05) 82%, rgba(11,11,12,0.12) 100%), linear-gradient(180deg, transparent 60%, var(--dark) 100%), linear-gradient(rgba(46,141,255,0.10), rgba(46,141,255,0.10)); }
     @media (max-width: 768px) {
-      #hero::before { inset: -12px -12px auto -12px; height: 820px; background-size: 130% auto; background-position: 50% 18%; -webkit-mask-image: linear-gradient(180deg, #000 55%, transparent 100%); mask-image: linear-gradient(180deg, #000 55%, transparent 100%); filter: grayscale(1) blur(1px) brightness(0.78) contrast(1.12); }
+      #hero::before { inset: -12px -12px auto -12px; height: 640px; background-size: 140% auto; background-position: 18% 0%; -webkit-mask-image: linear-gradient(180deg, #000 55%, transparent 100%); mask-image: linear-gradient(180deg, #000 55%, transparent 100%); filter: contrast(1.05); }
       #hero::after { background: linear-gradient(180deg, rgba(11,11,12,0.35) 0%, rgba(11,11,12,0.62) 45%, var(--dark) 85%); }
     }
     .pricing-card[data-href] { cursor: pointer; }
