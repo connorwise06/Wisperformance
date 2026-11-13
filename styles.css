@@ -1649,7 +1649,7 @@
     #hero::before { content: ''; position: absolute; inset: -24px; z-index: -2; background: url('hero-sprint.jpg?v=3') 102% -22px / 45% auto no-repeat; filter: contrast(1.05); -webkit-mask-image: linear-gradient(90deg, transparent 56%, rgba(0,0,0,0.08) 60%, rgba(0,0,0,0.25) 64%, rgba(0,0,0,0.5) 68%, rgba(0,0,0,0.78) 73%, #000 79%), linear-gradient(180deg, #000 82%, transparent 92%); -webkit-mask-composite: source-in; mask-image: linear-gradient(90deg, transparent 56%, rgba(0,0,0,0.08) 60%, rgba(0,0,0,0.25) 64%, rgba(0,0,0,0.5) 68%, rgba(0,0,0,0.78) 73%, #000 79%), linear-gradient(180deg, #000 82%, transparent 92%); mask-composite: intersect; }
     #hero::after { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(11,11,12,0.95) 0%, rgba(11,11,12,0.85) 45%, rgba(11,11,12,0.55) 58%, rgba(11,11,12,0.22) 70%, rgba(11,11,12,0.05) 82%, rgba(11,11,12,0.12) 100%), linear-gradient(180deg, transparent 60%, var(--dark) 100%), linear-gradient(rgba(46,141,255,0.10), rgba(46,141,255,0.10)); }
     @media (max-width: 768px) {
-      #hero::before { inset: -12px -12px auto -12px; height: 640px; background-size: 140% auto; background-position: 18% 0%; -webkit-mask-image: linear-gradient(180deg, #000 55%, transparent 100%); mask-image: linear-gradient(180deg, #000 55%, transparent 100%); filter: contrast(1.05); }
-      #hero::after { background: linear-gradient(180deg, rgba(11,11,12,0.35) 0%, rgba(11,11,12,0.62) 45%, var(--dark) 85%); }
+      /* phones: plain dark background, no photo */
+      #hero::before, #hero::after { display: none; }
     }
     .pricing-card[data-href] { cursor: pointer; }
